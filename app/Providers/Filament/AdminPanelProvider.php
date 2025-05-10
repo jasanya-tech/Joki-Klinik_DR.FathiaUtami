@@ -26,9 +26,14 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->font('poppins')
+            ->brandName('DR. Fathia Utami')
+            ->brandLogo($this->getBrandLogo())
+            ->brandLogoHeight('8rem')
+            ->favicon(asset('images/1.jpg'))
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#6ba543',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -54,5 +59,16 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+    }
+
+    protected function getBrandLogo(): ?string
+    {
+        // Tampilkan logo hanya di halaman login
+        if (request()->is('admin/login')) {
+            return asset('images/1.jpg');
+        }
+
+        // Selain itu (misal dashboard), tidak pakai logo
+        return null;
     }
 }
