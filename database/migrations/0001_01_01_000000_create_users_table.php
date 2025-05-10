@@ -1,11 +1,13 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Traits\BaseModelSoftDelete;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
+    use BaseModelSoftDelete;
     /**
      * Run the migrations.
      */
@@ -21,9 +23,9 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role', ['admin', 'doctor', 'user'])->default('user');
             $table->rememberToken();
-            $table->timestamps();
+            $this->base($table);
         });
-            
+
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
