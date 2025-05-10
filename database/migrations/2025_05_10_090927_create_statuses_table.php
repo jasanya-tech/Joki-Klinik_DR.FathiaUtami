@@ -1,19 +1,24 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use App\Traits\BaseModelSoftDeleteDefault;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
+    use BaseModelSoftDeleteDefault;
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create('status', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('status_type_id')->constrained('status_type');
+            $table->string('name', 128);
+            $table->string('desc', 255)->nullable();
+            $this->base($table);
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('status');
     }
 };
