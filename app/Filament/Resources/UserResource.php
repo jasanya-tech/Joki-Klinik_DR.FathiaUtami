@@ -75,6 +75,7 @@ class UserResource extends Resource
             ->columns([
                 ImageColumn::make('avatar_url')
                     ->label('Avatar')
+                    ->disk('avatars')
                     ->size(70)
                     ->circular(),
                 TextColumn::make('name')
