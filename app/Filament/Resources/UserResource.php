@@ -47,14 +47,6 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('status_id')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('created_by')
-                    ->required()
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('updated_by')
-                    ->numeric(),
-                Forms\Components\TextInput::make('deleted_by')
-                    ->numeric(),
             ]);
     }
 
