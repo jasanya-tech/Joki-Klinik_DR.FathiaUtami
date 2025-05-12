@@ -16,12 +16,12 @@ class Blog extends Model
 
     public function categori()
     {
-        return $this->belongsToMany(Category::class, 'blog_categoris', 'blogs_id', 'categoris_id');
+        return $this->belongsToMany(Category::class, 'blog_category', 'blog_id', 'category_id');
     }
 
     // Change from categori() to categoris()
     public function categoris()
     {
-        return $this->belongsToMany(Category::class, 'blog_categoris', 'blogs_id', 'categoris_id');
+        return $this->belongsToMany(Category::class, 'blog_category', 'blog_id', 'category_id');
     }
 }

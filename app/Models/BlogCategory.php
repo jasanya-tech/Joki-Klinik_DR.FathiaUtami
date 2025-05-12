@@ -26,11 +26,11 @@ class BlogCategory extends Model
     
     public function categori(): BelongsTo
     {
-        return $this->belongsTo(Categori::class, 'categoris_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function Blog(): BelongsTo
     {
-        return $this->belongsTo(Blog::class, 'blogs_id');
+        return $this->belongsTo(Blog::class, 'blog_id');
     }
 }
