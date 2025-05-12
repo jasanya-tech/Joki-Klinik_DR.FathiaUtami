@@ -2,16 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BlogResource\Pages;
-use App\Filament\Resources\BlogResource\RelationManagers;
-use App\Models\Blog;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use App\Models\Blog;
 use Filament\Tables;
+use App\Models\Status;
+use App\Models\Category;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\BlogResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\BlogResource\RelationManagers;
 
 class BlogResource extends Resource
 {
@@ -23,32 +29,57 @@ class BlogResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('thumbnail')
+                FileUpload::make('thumbnail')
+                    ->label('Thumbnail')
+                    ->image()
+                    ->required()
+                    ->directory('blog')
+                    ->columnSpanFull(),
+                TextInput::make('title')
+                    ->required()
+                    ->maxLength(128)
+                    ->reactive()
+                    ->columnSpanFull()
+                    ->afterStateUpdated(function (callable $set, $state) {
+                        $set('slug', str($state)->slug());
+                    }),
+                TextInput::make('slug')
+                    ->required()
+                    ->maxLength(128)
+                    ->reactive()
+                    ->columnSpanFull()
+                    ->afterStateUpdated(function (callable $set, $state) {
+                        $set('slug', str($state)->slug());
+                    }),
+                Select::make('categoris')
+                    ->multiple()
+                    ->relationship('categoris', 'name')
+                    ->label('Category')
+                    ->searchable()
+                    ->options(Category::limit(5)->pluck('name', 'id'))
+                    ->getSearchResultsUsing(function (string $search) {
+                        return Category::where('name', 'like', "%{$search}%")
+                            ->limit(5)
+                            ->pluck('name', 'id')
+                            ->toArray();
+                    })
+                    ->getOptionLabelUsing(function ($value) {
+                        return Category::find($value)?->name;
+                    })
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('title')
+                TextInput::make('author')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('author')
-                    ->required()
-                    ->maxLength(128),
-                Forms\Components\Textarea::make('body')
+                    ->maxLength(128)
+                    ->columnSpanFull(),
+                RichEditor::make('body')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('status_id')
+                Select::make('status_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('created_by')
-                    ->required()
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('updated_by')
-                    ->numeric(),
-                Forms\Components\TextInput::make('deleted_by')
-                    ->numeric(),
+                    ->label('Status')
+                    ->searchable()
+                    ->options(Status::all()->pluck('name', 'id')),
             ]);
     }
 
