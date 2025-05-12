@@ -4,36 +4,44 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
+use App\Models\Status;
 use Filament\Forms\Form;
 use App\Models\StatusType;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\ColorPicker;
+use App\Filament\Resources\StatusResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\StatusTypeResource\Pages;
-use App\Filament\Resources\StatusTypeResource\RelationManagers;
+use App\Filament\Resources\StatusResource\RelationManagers;
 
-class StatusTypeResource extends Resource
+class StatusResource extends Resource
 {
-    protected static ?string $model = StatusType::class;
+    protected static ?string $model = Status::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-archive-box';
+    protected static ?string $navigationIcon = 'heroicon-o-check-circle';
 
     protected static ?string $navigationGroup = 'Status Management';
 
-    protected static ?string $navigationLabel = 'Status Type';
+    protected static ?string $navigationLabel = 'Status';
 
-    protected static ?string $label = 'Status Type';
+    protected static ?string $label = 'Status';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Select::make('status_type_id')
+                    ->required()
+                    ->label('Status Type')
+                    ->options(StatusType::all()->pluck('name', 'id'))
+                    ->columnSpan(2),
                 TextInput::make('name')
                     ->required()
                     ->maxLength(128)
@@ -42,6 +50,9 @@ class StatusTypeResource extends Resource
                     ->label('Description')
                     ->maxLength(255)
                     ->columnSpan(2),
+                ColorPicker::make('color'),
+                TextInput::make('icon')
+                    ->maxLength(255),
                 Toggle::make('active')
                     ->required(),
             ]);
@@ -51,10 +62,19 @@ class StatusTypeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('statusType.name')
+                    ->label('Status Type')
+                    ->sortable()
                     ->searchable(),
+                TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('desc')
                     ->label('Description')
+                    ->searchable(),
+                TextColumn::make('color')
+                    ->searchable(),
+                TextColumn::make('icon')
                     ->searchable(),
                 IconColumn::make('active')
                     ->boolean(),
@@ -103,9 +123,9 @@ class StatusTypeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListStatusTypes::route('/'),
-            'create' => Pages\CreateStatusType::route('/create'),
-            'edit' => Pages\EditStatusType::route('/{record}/edit'),
+            'index' => Pages\ListStatuses::route('/'),
+            'create' => Pages\CreateStatus::route('/create'),
+            'edit' => Pages\EditStatus::route('/{record}/edit'),
         ];
     }
 
