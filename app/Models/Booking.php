@@ -26,6 +26,6 @@ class Booking extends Model
 
     public function doctorSchedule()
     {
-        return $this->belongsTo(Doctor::class, 'doctor_schedule_id');
+        return $this->belongsTo(DoctorSchedule::class, 'doctor_schedule_id');
     }
 }

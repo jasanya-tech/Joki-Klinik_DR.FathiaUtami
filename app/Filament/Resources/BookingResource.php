@@ -10,9 +10,11 @@ use App\Models\Booking;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Models\DoctorSchedule;
+use Illuminate\Support\Carbon;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\BookingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -64,24 +66,36 @@ class BookingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')
-                    ->numeric()
+                TextColumn::make('user.name')
+                    ->label('Patient')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('doctor_schedule_id')
-                    ->numeric()
+                TextColumn::make('doctorSchedule.doctor.user.name')
+                    ->label('Doctor')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('status_id')
-                    ->numeric()
+                TextColumn::make('doctorSchedule.day')
+                    ->label('Day')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_by')
-                    ->numeric()
+                TextColumn::make('doctorSchedule.start_time')
+                    ->label('Start Time')
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)->format('H:i') . ' WIB';
+                    })
                     ->sortable(),
-                Tables\Columns\TextColumn::make('updated_by')
-                    ->numeric()
+                TextColumn::make('complaint')
+                    ->limit(50)
+                    ->searchable(),
+                TextColumn::make('doctor_feedback')
+                    ->limit(50)
+                    ->searchable(),
+                TextColumn::make('status.name')
+                    ->label('Status')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('deleted_by')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('createdBy.name')
+                    ->label('Created By'),
+                TextColumn::make('updatedBy.name')
+                    ->label("Updated by"),
+                TextColumn::make('deletedBy.name')
+                    ->label("Deleted by"),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -99,7 +113,9 @@ class BookingResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
