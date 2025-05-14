@@ -11,7 +11,9 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\DoctorResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -54,25 +56,29 @@ class DoctorResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nip')
+                ImageColumn::make('user.avatar_url')
+                    ->label('Avatar')
+                    ->circular()
+                    ->size(70),
+                TextColumn::make('user.name')
+                    ->label('Name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('spesialis')
+                TextColumn::make('nip')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('price')
-                    ->money()
+                TextColumn::make('spesialis')
+                    ->searchable(),
+                TextColumn::make('price')
+                    ->money('IDR', true)
                     ->sortable(),
-                Tables\Columns\TextColumn::make('status_id')
-                    ->numeric()
+                TextColumn::make('status.name')
+                    ->label('Status')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_by')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('updated_by')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('deleted_by')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('createdBy.name')
+                    ->label('Created By'),
+                TextColumn::make('updatedBy.name')
+                    ->label("Updated by"),
+                TextColumn::make('deletedBy.name')
+                    ->label("Deleted by"),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -90,7 +96,9 @@ class DoctorResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
