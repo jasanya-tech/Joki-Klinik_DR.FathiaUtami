@@ -2,16 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\DoctorScheduleResource\Pages;
-use App\Filament\Resources\DoctorScheduleResource\RelationManagers;
-use App\Models\DoctorSchedule;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Doctor;
+use App\Models\Status;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\DoctorSchedule;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TimePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\DoctorScheduleResource\Pages;
+use App\Filament\Resources\DoctorScheduleResource\RelationManagers;
 
 class DoctorScheduleResource extends Resource
 {
@@ -27,26 +32,42 @@ class DoctorScheduleResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('doctor_id')
+                Select::make('doctor_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('day')
-                    ->required(),
-                Forms\Components\TextInput::make('start_time')
-                    ->required(),
-                Forms\Components\TextInput::make('end_time')
-                    ->required(),
-                Forms\Components\TextInput::make('status_id')
+                    ->searchable()
+                    ->options(Doctor::with('user')->get()->pluck('user.name', 'id'))
+                    ->label('Doctor Name')
+                    ->columnSpan(2),
+                Section::make('Doctor Schedule')
+                    ->description('Prevent abuse by limiting the number of requests per period')
+                    ->icon('heroicon-m-clock')
+                    ->columns(3)
+                    ->schema([
+                        Select::make('day')
+                            ->label('Day')
+                            ->options([
+                                'Monday'    => 'Monday',
+                                'Tuesday'   => 'Tuesday',
+                                'Wednesday' => 'Wednesday',
+                                'Thursday'  => 'Thursday',
+                                'Friday'    => 'Friday',
+                                'Saturday'  => 'Saturday',
+                                'Sunday'    => 'Sunday',
+                            ])
+                            ->required()
+                            ->searchable(),
+                        TimePicker::make('start_time')
+                            ->required()
+                            ->native(false),
+                        TimePicker::make('end_time')
+                            ->required()
+                            ->native(false), 
+                    ]),
+                Select::make('status_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('created_by')
-                    ->required()
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('updated_by')
-                    ->numeric(),
-                Forms\Components\TextInput::make('deleted_by')
-                    ->numeric(),
+                    ->label('Status')
+                    ->searchable()
+                    ->options(Status::all()->pluck('name', 'id')),
             ]);
     }
 
