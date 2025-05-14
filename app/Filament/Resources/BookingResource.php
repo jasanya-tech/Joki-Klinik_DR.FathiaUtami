@@ -2,16 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BookingResource\Pages;
-use App\Filament\Resources\BookingResource\RelationManagers;
-use App\Models\Booking;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use App\Models\User;
 use Filament\Tables;
+use App\Models\Status;
+use App\Models\Booking;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\DoctorSchedule;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\BookingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\BookingResource\RelationManagers;
 
 class BookingResource extends Resource
 {
@@ -27,28 +32,31 @@ class BookingResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
+                Select::make('user_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('doctor_schedule_id')
+                    ->options(fn () => User::all()->pluck('name', 'id'))
+                    ->label('User')
+                    ->default(auth()->user()->id)
+                    ->searchable(),
+                Select::make('doctor_schedule_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\Textarea::make('complaint')
+                    ->options(
+                        DoctorSchedule::with('doctor.user')->get()->mapWithKeys(function ($schedule) {
+                            return [$schedule->id => $schedule->doctor->user->name ?? 'Tanpa Nama'];
+                        })
+                    )
+                    ->label('Doctor Schedule')
+                    ->searchable(),
+                Textarea::make('complaint')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('doctor_feedback')
+                Textarea::make('doctor_feedback')
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('status_id')
+                Select::make('status_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('created_by')
-                    ->required()
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('updated_by')
-                    ->numeric(),
-                Forms\Components\TextInput::make('deleted_by')
-                    ->numeric(),
+                    ->label('Status')
+                    ->searchable()
+                    ->options(Status::all()->pluck('name', 'id')),
             ]);
     }
 
