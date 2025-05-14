@@ -17,7 +17,11 @@ class DoctorScheduleResource extends Resource
 {
     protected static ?string $model = DoctorSchedule::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clock';
+
+    protected static ?string $navigationGroup = 'Doctor Management';
+
+    protected static ?string $navigationLabel = 'Doctor Schedule';
 
     public static function form(Form $form): Form
     {
