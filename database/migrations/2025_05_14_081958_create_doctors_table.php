@@ -16,6 +16,7 @@ return new class extends Migration
     {
         Schema::create('doctor', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->string('nip', 16);
             $table->string('spesialis', 64);
             $table->double('price');
