@@ -12,11 +12,13 @@ use App\Models\DoctorSchedule;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TimePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\DoctorScheduleResource\Pages;
 use App\Filament\Resources\DoctorScheduleResource\RelationManagers;
+use Carbon\Carbon;
 
 class DoctorScheduleResource extends Resource
 {
@@ -75,24 +77,34 @@ class DoctorScheduleResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('doctor_id')
-                    ->numeric()
+                TextColumn::make('doctor.user.name')
+                    ->label('Doctor Name')
+                    ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('day'),
-                Tables\Columns\TextColumn::make('start_time'),
-                Tables\Columns\TextColumn::make('end_time'),
-                Tables\Columns\TextColumn::make('status_id')
-                    ->numeric()
+                TextColumn::make('day')
+                    ->label('Day')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_by')
-                    ->numeric()
+                TextColumn::make('start_time')
+                    ->label('Start Time')
+                    ->sortable()
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)->format('H:i') . ' WIB';
+                    }),
+                TextColumn::make('end_time')
+                    ->label('End Time')
+                    ->sortable()
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)->format('H:i') . ' WIB';
+                    }),
+                TextColumn::make('status.name')
+                    ->label('Status')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('updated_by')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('deleted_by')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('createdBy.name')
+                    ->label('Created By'),
+                TextColumn::make('updatedBy.name')
+                    ->label("Updated by"),
+                TextColumn::make('deletedBy.name')
+                    ->label("Deleted by"),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -110,7 +122,9 @@ class DoctorScheduleResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
