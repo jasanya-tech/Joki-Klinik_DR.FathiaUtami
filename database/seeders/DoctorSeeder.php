@@ -27,12 +27,30 @@ class DoctorSeeder extends Seeder
 
         $doctorSchedule =
             [
-                'id' => 1,
-                'doctor_id' => 1,
-                'day' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                'start_time' => '08:00:00',
-                'end_time' => '17:00:00',
-                'status_id' => 1,
+                [
+                    'id' => 1,
+                    'doctor_id' => 1,
+                    'day' => 'Monday',
+                    'start_time' => '08:00:00',
+                    'end_time' => '17:00:00',
+                    'status_id' => 1,
+                ],
+                [
+                    'id' => 2,
+                    'doctor_id' => 1,
+                    'day' => 'Tuesday',
+                    'start_time' => '10:00:00',
+                    'end_time' => '18:00:00',
+                    'status_id' => 1,
+                ],
+                [
+                    'id' => 3,
+                    'doctor_id' => 1,
+                    'day' => 'Wednesday',
+                    'start_time' => '12:00:00',
+                    'end_time' => '19:00:00',
+                    'status_id' => 1,
+                ],
             ];
         DoctorSchedule::insert($doctorSchedule);
     }
