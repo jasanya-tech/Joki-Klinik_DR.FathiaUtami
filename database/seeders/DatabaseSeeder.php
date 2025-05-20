@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             DoctorSeeder::class,
             BookingSeeder::class,
             BlogSeeder::class,
+            BookingStatusSeeder::class,
         ]);
     }
 }
