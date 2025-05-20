@@ -20,7 +20,7 @@ class BookingSeeder extends Seeder
                 'doctor_schedule_id' => 1,
                 'complaint' => 'Badan saya terasa lemas dan tidak bertenaga',
                 'doctor_feedback' => 'Dokter nya sangat ramah dan berkata bijak',
-                'status_id' => 1,
+                'status_id' => 4,
             ];
         Booking::insert($booking);
     }
