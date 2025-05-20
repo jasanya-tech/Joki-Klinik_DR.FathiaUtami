@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 2,
-                'name' => 'User',
+                'name' => 'DR. Brando S.Gpt',
                 'email' => "doctor@gmail.com",
                 'password' => bcrypt('12345678'),
                 'phone_number' => '08123456789',
@@ -36,8 +36,8 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 3,
-                'name' => 'User',
-                'email' => "user@gmail.com",
+                'name' => 'Dani Alfaest',
+                'email' => "dani@gmail.com",
                 'password' => bcrypt('12345678'),
                 'phone_number' => '08123456789',
                 'avatar_url' => 'default.png',
