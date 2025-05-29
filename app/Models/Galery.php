@@ -13,6 +13,9 @@ class Galery extends Model
     use HasFactory, Notifiable, AuditedBySoftDelete, SoftDeletes;
     protected $table = 'galery';
     protected $guarded = ['id'];
+    protected $casts = [
+        'images' => 'array',
+    ];
 
     public function status()
     {
