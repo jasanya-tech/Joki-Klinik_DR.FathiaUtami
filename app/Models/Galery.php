@@ -21,4 +21,11 @@ class Galery extends Model
     {
         return $this->belongsTo(Status::class, 'status_id');
     }
+
+    // jika tidak ada, buat array kosong
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['images'] = $data['images'] ?? [];
+        return $data;
+    }
 }

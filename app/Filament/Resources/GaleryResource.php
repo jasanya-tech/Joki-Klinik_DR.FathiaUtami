@@ -33,11 +33,12 @@ class GaleryResource extends Resource
                     ->label('Gallery Name')
                     ->columnSpanFull()
                     ->maxLength(128),
-                FileUpload::make('image')
+                FileUpload::make('images')
                     ->label('Image Gallery')
                     ->directory('galery')
                     ->multiple()
                     ->required()
+                    ->preserveFilenames()
                     ->columnSpanFull(),
                 Select::make('status_id')
                     ->required()
