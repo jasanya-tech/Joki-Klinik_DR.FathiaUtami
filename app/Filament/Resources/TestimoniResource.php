@@ -2,16 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TestimoniResource\Pages;
-use App\Filament\Resources\TestimoniResource\RelationManagers;
-use App\Models\Testimoni;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Doctor;
+use App\Models\Status;
+use Filament\Forms\Form;
+use App\Models\Testimoni;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\TestimoniResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\TestimoniResource\RelationManagers;
 
 class TestimoniResource extends Resource
 {
@@ -23,25 +27,33 @@ class TestimoniResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('doctor_id')
+                Select::make('doctor_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('massage')
+                    ->options(Doctor::with('user')->get()->pluck('user.name', 'id'))
+                    ->label('Doctor Name')
+                    ->columnSpan(2),
+                Textarea::make('massage')
                     ->required()
+                    ->columnSpanFull()
+                    ->label('Testimonial Message')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('ratting')
-                    ->required(),
-                Forms\Components\TextInput::make('status_id')
+                Select::make('ratting')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('created_by')
+                    ->options([
+                        1 => '1 Star',
+                        2 => '2 Stars',
+                        3 => '3 Stars',
+                        4 => '4 Stars',
+                        5 => '5 Stars',
+                    ])
+                    ->label('Rating')
+                    ->columnSpanFull(),
+                Select::make('status_id')
                     ->required()
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('updated_by')
-                    ->numeric(),
-                Forms\Components\TextInput::make('deleted_by')
-                    ->numeric(),
+                    ->label('Status')
+                    ->searchable()
+                    ->columnSpanFull()
+                    ->options(Status::where('status_type_id', 1)->pluck('name', 'id')),
             ]);
     }
 
