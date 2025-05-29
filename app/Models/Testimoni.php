@@ -18,4 +18,9 @@ class Testimoni extends Model
     {
         return $this->belongsTo(Status::class, 'status_id');
     }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class, 'doctor_id');
+    }
 }
