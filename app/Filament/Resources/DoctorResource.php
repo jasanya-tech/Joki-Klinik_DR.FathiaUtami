@@ -11,6 +11,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
@@ -35,7 +36,7 @@ class DoctorResource extends Resource
             ->schema([
                 Select::make('user_id')
                     ->required()
-                    ->options(fn () => User::all()->pluck('name', 'id'))
+                    ->options(fn () => User::where('role', 'doctor')->pluck('name', 'id'))
                     ->label('User')
                     ->searchable(),
                 TextInput::make('nip')
@@ -48,6 +49,10 @@ class DoctorResource extends Resource
                     ->required()
                     ->numeric()
                     ->prefix('Rp'),
+                Textarea::make('desc')
+                    ->label('Description')
+                    ->maxLength(255)
+                    ->columnSpan(2),
                 Select::make('status_id')
                     ->required()
                     ->label('Status')
@@ -74,6 +79,9 @@ class DoctorResource extends Resource
                 TextColumn::make('price')
                     ->money('IDR', true)
                     ->sortable(),
+                TextColumn::make('desc')
+                    ->label('Description')
+                    ->searchable(),
                 TextColumn::make('status.name')
                     ->label('Status')
                     ->sortable(),
