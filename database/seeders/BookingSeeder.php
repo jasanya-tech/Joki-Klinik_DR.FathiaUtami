@@ -21,6 +21,7 @@ class BookingSeeder extends Seeder
                 'code' => '1212331',
                 'complaint' => 'Badan saya terasa lemas dan tidak bertenaga',
                 'doctor_feedback' => 'Dokter nya sangat ramah dan berkata bijak',
+                'booking_date' => '2024-06-10',
                 'status_id' => 4,
             ];
         Booking::insert($booking);
