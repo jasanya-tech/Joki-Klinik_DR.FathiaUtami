@@ -36,6 +36,8 @@ class DoctorScheduleTable extends BaseWidget
                     ->sortable(),
                 TextColumn::make('day')
                     ->label('Day')
+                    ->badge()
+                    ->color('info')
                     ->sortable(),
                 TextColumn::make('start_time')
                     ->label('Start Time')
