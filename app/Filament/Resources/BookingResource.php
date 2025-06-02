@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\BookingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BookingResource\RelationManagers;
+use Filament\Forms\Components\DatePicker;
 
 class BookingResource extends Resource
 {
@@ -61,6 +62,10 @@ class BookingResource extends Resource
                     )
                     ->label('Doctor Schedule')
                     ->searchable(),
+                DatePicker::make('booking_date')
+                    ->required()
+                    ->Label('Booking Date')
+                    ->native(false),
                 Textarea::make('complaint')
                     ->required()
                     ->columnSpanFull(),
@@ -89,6 +94,9 @@ class BookingResource extends Resource
                 TextColumn::make('doctorSchedule.doctor.user.name')
                     ->label('Doctor')
                     ->sortable(),
+                TextColumn::make('booking_date')
+                    ->label('Booking Date')
+                    ->sortable(),
                 TextColumn::make('doctorSchedule.day')
                     ->label('Day')
                     ->sortable(),
@@ -98,10 +106,16 @@ class BookingResource extends Resource
                         return Carbon::parse($state)->format('H:i') . ' WIB';
                     })
                     ->sortable(),
+                TextColumn::make('queue_number')
+                    ->label('Queqeu Date')
+                    ->sortable(),
                 TextColumn::make('complaint')
                     ->limit(50)
                     ->searchable(),
                 TextColumn::make('doctor_feedback')
+                    ->limit(50)
+                    ->searchable(),
+                TextColumn::make('pdf_path')
                     ->limit(50)
                     ->searchable(),
                 TextColumn::make('status.name')
