@@ -18,6 +18,7 @@ class BookingSeeder extends Seeder
                 'id' => 1,
                 'user_id' => 1,
                 'doctor_schedule_id' => 1,
+                'code' => '1212331',
                 'complaint' => 'Badan saya terasa lemas dan tidak bertenaga',
                 'doctor_feedback' => 'Dokter nya sangat ramah dan berkata bijak',
                 'status_id' => 4,

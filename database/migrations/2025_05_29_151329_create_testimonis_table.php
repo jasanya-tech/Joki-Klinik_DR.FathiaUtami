@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('testimoni', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id')->constrained('doctor')->nullable();
+            $table->foreignId('booking_id')->constrained('booking')->nullable();
             $table->string('massage', 255);
             $table->enum('ratting', ['1', '2', '3', '4', '5'])->default('5');
             $this->base($table);

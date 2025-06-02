@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('doctor_schedule_id')->constrained('doctor_schedule');
+            $table->string('code', 32);
             $table->text('complaint');
             $table->text('doctor_feedback')->nullable();
             $this->base($table);
