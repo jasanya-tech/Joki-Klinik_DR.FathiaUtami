@@ -2,6 +2,8 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Blog;
+use App\Models\User;
 use Illuminate\Support\Carbon;
 use Filament\Support\Enums\IconPosition;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -11,7 +13,10 @@ class StatsOverview extends BaseWidget
 {
     protected function getStats(): array
     {
-        $user = auth()->user();
+        $user = User::count();
+        $blog = Blog::count();
+        $doctor = User::where('role', 'doctor')->count();
+
         return [
             Stat::make('Jumlah Konten', '242')
                 ->description('Konten')
