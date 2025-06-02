@@ -42,4 +42,20 @@ class BlogController extends Controller
         // Kembalikan view dengan data dokter dan nilai pencarian (untuk mengisi kembali input search)
         return view('user.blog.index', compact('blogs', 'search', 'recentBlogs', 'categories'));
     }
+
+    public function show($slug)
+    {
+        // Temukan blog berdasarkan slug
+        $blog = Blog::with(['categoris', 'status'])->where('slug', $slug)->firstOrFail();
+
+               $recentBlogs = Blog::with(['categoris', 'status'])
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+    
+
+        // Kembalikan view dengan data blog
+        return view('user.blog.show', compact('blog', 'recentBlogs'));
+    }
+   
 }

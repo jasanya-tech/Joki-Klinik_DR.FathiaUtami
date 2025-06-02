@@ -114,7 +114,7 @@
                                         </ul>
                                         <p>{{ substr($blog->body, 0, 100) . '...' }}
                                         </p>
-                                        <a href="blog-single.html" class="r-btn">Read More</a>
+                                        <a href="{{ route('blog.show', $blog->slug) }}" class="r-btn">Read More</a>
                                     </div>
                                 </div>
                             </div>

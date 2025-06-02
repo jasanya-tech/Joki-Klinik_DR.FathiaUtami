@@ -38,7 +38,7 @@
                             <img src="images/founder-img1.png" alt="img">
                             <section>
                                 <div class="sb-service-section2 bg-change2">
-                                    <a href="dr-single.html">
+                                    <a href="{{ route('doctors.show', $doctor->id) }}" class="d-inline-block">
                                         <h6>{{ $doctor->user->name }}</h6>
                                     </a>
                                     <p>{{ $doctor->spesialis }}</p>

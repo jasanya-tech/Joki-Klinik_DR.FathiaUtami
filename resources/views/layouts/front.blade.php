@@ -87,7 +87,7 @@
                   <div class="col-lg-3 col-md-3 col-sm-12 col-12">
                      <div class="sb_logo_wrapper">
                         <a href="index.html">
-                           <img src="images/logo.png" alt="img" class="">
+                           <img src="{{asset('images/logo.png')}}" alt="img" class="">
                         </a>
                      </div>
                   </div>

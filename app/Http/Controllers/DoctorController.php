@@ -27,4 +27,15 @@ class DoctorController extends Controller
         // Kembalikan view dengan data dokter dan nilai pencarian (untuk mengisi kembali input search)
         return view('user.doctors.index', compact('doctors', 'search'));
     }
+
+
+    public function show($id)
+    {
+        // Ambil data dokter dengan relasi user
+        $doctor = Doctor::with(['user', 'schedules'])->findOrFail($id);
+        
+
+        // Kembalikan view dengan data dokter
+        return view('user.doctors.show', compact('doctor'));
+    }
 }
