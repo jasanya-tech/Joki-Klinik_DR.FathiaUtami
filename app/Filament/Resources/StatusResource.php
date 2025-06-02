@@ -50,9 +50,6 @@ class StatusResource extends Resource
                     ->label('Description')
                     ->maxLength(255)
                     ->columnSpan(2),
-                ColorPicker::make('color'),
-                TextInput::make('icon')
-                    ->maxLength(255),
                 Toggle::make('active')
                     ->required(),
             ]);
@@ -71,10 +68,6 @@ class StatusResource extends Resource
                     ->sortable(),
                 TextColumn::make('desc')
                     ->label('Description')
-                    ->searchable(),
-                TextColumn::make('color')
-                    ->searchable(),
-                TextColumn::make('icon')
                     ->searchable(),
                 IconColumn::make('active')
                     ->boolean(),
