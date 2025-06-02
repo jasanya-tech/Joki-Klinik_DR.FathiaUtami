@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\cr;
 use App\Models\Booking;
 use Illuminate\Support\Str;
@@ -11,6 +12,7 @@ use Illuminate\Support\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Requests\BokkingRequest;
 use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class BookingController extends Controller
 {
@@ -35,60 +37,65 @@ class BookingController extends Controller
      */
     public function store(BokkingRequest $request)
     {
-        // Ambil jadwal dokter
-        $schedule = DoctorSchedule::findOrFail($request->doctor_schedule_id);
+        try {
+            // Ambil jadwal dokter
+            $schedule = DoctorSchedule::findOrFail($request->doctor_schedule_id);
 
-        // Hitung nomor antrian hari itu
-        $today = Carbon::parse($request->booking_date)->toDateString();
-        $lastQueue = Booking::whereDate('booking_date', $today)
-            ->where('doctor_schedule_id', $schedule->id)
-            ->max('queue_number');
+            // Hitung nomor antrian hari itu
+            $today = Carbon::parse($request->booking_date)->toDateString();
+            $lastQueue = Booking::whereDate('booking_date', $today)
+                ->where('doctor_schedule_id', $schedule->id)
+                ->max('queue_number');
 
-        $queueNumber = $lastQueue ? $lastQueue + 1 : 1;
+            $queueNumber = $lastQueue ? $lastQueue + 1 : 1;
 
-        // Hitung estimasi waktu (misal: 15 menit per antrian)
-        $estimatedTime = Carbon::parse($schedule->start_time)
-            ->addMinutes(15 * ($queueNumber - 1));
+            // Hitung estimasi waktu (misal: 15 menit per antrian)
+            $estimatedTime = Carbon::parse($schedule->start_time)
+                ->addMinutes(15 * ($queueNumber - 1));
 
-        // Generate kode unik booking
-        $randomCode = strtoupper(Str::random(5)) . now()->format('Ymd');
-        $bookingCode = 'BOOK-' . $randomCode;
-        
-        // Simpan booking
-        $booking = Booking::create([
-            'user_id' => $request->user_id,
-            'doctor_schedule_id' => $request->doctor_schedule_id,
-            'code' => $bookingCode,
-            'complaint' => $request->complaint,
-            'booking_date' => $today,
-            'queue_number' => $queueNumber,
-            'estimated_time' => $estimatedTime->format('H:i'),
-        ]);
+            // Generate kode unik booking
+            $randomCode = strtoupper(Str::random(5)) . now()->format('Ymd');
+            $bookingCode = 'BOOK-' . $randomCode;
+            
+            // Simpan booking
+            $booking = Booking::create([
+                'user_id' => auth()->id(),
+                'doctor_schedule_id' => $request->doctor_schedule_id,
+                'code' => $bookingCode,
+                'complaint' => $request->complaint,
+                'booking_date' => $today,
+                'queue_number' => $queueNumber,
+                'estimated_time' => $estimatedTime->format('H:i'),
+            ]);
 
-        // Buat QR Code
-        $qrContent = "Kode Booking: $booking->code\nAntrian: $queueNumber\nJam: $estimatedTime";
-        $qrPath = "qrcodes/booking_{$booking->id}.png";
-        QrCode::format('png')->size(300)->generate($qrContent, public_path("storage/{$qrPath}"));
-        $booking->qr_code_path = $qrPath;
+            // Buat QR Code
+            $qrContent = "Kode Booking: $booking->code\nAntrian: $queueNumber\nJam: $estimatedTime";
+            $qrPath = "qrcodes/booking_{$booking->id}.png";
+            QrCode::format('png')->size(300)->generate($qrContent, public_path("storage/{$qrPath}"));
+            $booking->qr_code_path = $qrPath;
 
-        // Buat PDF
-        $pdf = Pdf::loadView('pdf.booking', ['booking' => $booking]);
-        $pdfPath = "pdfs/booking_{$booking->id}.pdf";
-        Storage::put("public/{$pdfPath}", $pdf->output());
-        $booking->pdf_path = $pdfPath;
+            // Buat PDF
+            $pdf = Pdf::loadView('pdf.booking', ['booking' => $booking]);
+            $pdfPath = "pdfs/booking_{$booking->id}.pdf";
+            Storage::put("public/{$pdfPath}", $pdf->output());
+            $booking->pdf_path = $pdfPath;
 
-        $booking->save();
+            $booking->save();
 
-        return response()->json([
-            'message' => 'Booking berhasil dibuat',
-            'data' => $booking
-        ]);
+            return response()->json([
+                'message' => 'Booking berhasil dibuat',
+                'data' => $booking
+            ]);
+        } catch (Exception $e) {
+            return response()->redirectTo('/home')
+                ->with('error', 'Booking Gagal ' . $e->getMessage());
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(cr $cr)
+    public function show()
     {
         //
     }
@@ -96,7 +103,7 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cr $cr)
+    public function edit()
     {
         //
     }
@@ -104,7 +111,7 @@ class BookingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, cr $cr)
+    public function update(Request $request)
     {
         //
     }
@@ -112,7 +119,7 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cr $cr)
+    public function destroy()
     {
         //
     }
