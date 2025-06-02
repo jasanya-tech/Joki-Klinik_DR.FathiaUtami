@@ -8,7 +8,9 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\DoctorSchedule;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Requests\BokkingRequest;
+use Illuminate\Support\Facades\Storage;
 
 class BookingController extends Controller
 {
