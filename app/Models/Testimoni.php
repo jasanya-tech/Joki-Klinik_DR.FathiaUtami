@@ -19,8 +19,8 @@ class Testimoni extends Model
         return $this->belongsTo(Status::class, 'status_id');
     }
 
-    public function doctor()
+    public function booking()
     {
-        return $this->belongsTo(Doctor::class, 'doctor_id');
+        return $this->belongsTo(Booking::class, 'booking_id');
     }
 }
