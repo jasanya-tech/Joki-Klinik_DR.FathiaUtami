@@ -12,6 +12,7 @@ use Filament\Tables\Table;
 use App\Models\DoctorSchedule;
 use Illuminate\Support\Carbon;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
@@ -34,6 +35,17 @@ class BookingResource extends Resource
     {
         return $form
             ->schema([
+                Hidden::make('code')
+                    ->required()
+                    ->label('Order Code')
+                    ->disabled(fn ($context) => $context === 'edit')
+                    ->default(function ($context) {
+                        if ($context === 'create') {
+                            $randomNumber = rand(100, 99999);
+                            return 'BOOK-' . $randomNumber . '-' . now()->format('Ymd');
+                        }
+                        return null;
+                    }),
                 Select::make('user_id')
                     ->required()
                     ->options(fn () => User::all()->pluck('name', 'id'))
@@ -66,6 +78,11 @@ class BookingResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('code')
+                    ->label('Booking Code')
+                    ->badge()
+                    ->color('info')
+                    ->sortable(),
                 TextColumn::make('user.name')
                     ->label('Patient')
                     ->sortable(),
