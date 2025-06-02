@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Exception;
-use App\Models\cr;
 use App\Models\Booking;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -29,7 +28,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $bookings = Booking::all();
+        return view('pages.booking', compact('bookings'));
     }
 
     /**
