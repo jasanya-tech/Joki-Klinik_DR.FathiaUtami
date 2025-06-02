@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Tables;
 use App\Models\Doctor;
 use App\Models\Status;
+use App\Models\Booking;
 use Filament\Forms\Form;
 use App\Models\Testimoni;
 use Filament\Tables\Table;
@@ -32,10 +33,10 @@ class TestimoniResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('doctor_id')
+                Select::make('booking_id')
                     ->required()
-                    ->options(Doctor::with('user')->get()->pluck('user.name', 'id'))
-                    ->label('Doctor Name')
+                    ->options(Booking::all()->pluck('code', 'id'))
+                    ->label('Booking Code')
                     ->columnSpan(2),
                 Textarea::make('massage')
                     ->required()
@@ -66,8 +67,11 @@ class TestimoniResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('doctor.user.name')
-                    ->label('Doctor Name')
+                TextColumn::make('booking.code')
+                    ->label('Booking Code')
+                    ->sortable(),
+                TextColumn::make('booking.user.name')
+                    ->label('Patient')
                     ->sortable(),
                 TextColumn::make('massage')
                     ->label('Testimonial Message')
