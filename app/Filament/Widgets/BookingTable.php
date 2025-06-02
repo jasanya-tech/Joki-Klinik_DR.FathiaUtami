@@ -37,6 +37,9 @@ class BookingTable extends BaseWidget
                     ->label('Doctor')
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('booking_date')
+                    ->label('Booking Date')
+                    ->sortable(),
                 TextColumn::make('doctorSchedule.day')
                     ->label('Day')
                     ->badge()
@@ -49,6 +52,9 @@ class BookingTable extends BaseWidget
                     ->formatStateUsing(function ($state) {
                         return Carbon::parse($state)->format('H:i') . ' WIB';
                     })
+                    ->sortable(),
+                TextColumn::make('queue_number')
+                    ->label('Queqeu Date')
                     ->sortable(),
                 TextColumn::make('complaint')
                     ->limit(50)
