@@ -23,12 +23,20 @@ class BookingTable extends BaseWidget
             ->query(Booking::query()->with('doctorSchedule', 'user'))
             ->defaultPaginationPageOption(5)
             ->columns([
+                TextColumn::make('code')
+                    ->label('Booking Code')
+                    ->badge()
+                    ->color('info')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('user.name')
                     ->label('Patient Name')
-                    ->sortable(),
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('doctorSchedule.doctor.user.name')
                     ->label('Doctor')
-                    ->sortable(),
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('doctorSchedule.day')
                     ->label('Day')
                     ->badge()
