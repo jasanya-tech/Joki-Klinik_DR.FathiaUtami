@@ -69,13 +69,14 @@ class BookingResource extends Resource
                 Textarea::make('complaint')
                     ->required()
                     ->columnSpanFull(),
-                Textarea::make('doctor_feedback')
+                Hidden::make('doctor_feedback')
                     ->columnSpanFull(),
                 Select::make('status_id')
                     ->required()
                     ->label('Status')
                     ->searchable()
-                    ->options(Status::all()->pluck('name', 'id')),
+                    ->default('PENDING')
+                    ->options(Status::where('status_type_id', 2)->pluck('name', 'id')),
             ]);
     }
 
