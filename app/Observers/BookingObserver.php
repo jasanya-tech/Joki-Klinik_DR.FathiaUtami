@@ -14,7 +14,7 @@ class BookingObserver
     /**
      * Handle the Booking "created" event.
      */
-    public function creating(Booking $booking)
+    public function creating(Booking $booking) // Dipanggil sebelum data dimasukkan ke database.
     {
         // Ambil jadwal dokter
         $schedule = DoctorSchedule::findOrFail($booking->doctor_schedule_id);
@@ -39,7 +39,7 @@ class BookingObserver
         $booking->code = 'BOOK-' . $randomCode;
     }
 
-    public function created(Booking $booking)
+    public function created(Booking $booking) // Dipanggil setelah data berhasil dimasukkan ke database (dengan id sudah tersedia).
     {
         // Buat QR Code
         $qrContent = "Kode Booking: {$booking->code}\nAntrian: {$booking->queue_number}\nJam: {$booking->estimated_time}";
