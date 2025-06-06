@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Booking;
+use Milon\Barcode\DNS2D;
 use Illuminate\Support\Str;
 use App\Models\DoctorSchedule;
 use Illuminate\Support\Carbon;
@@ -41,11 +42,13 @@ class BookingObserver
 
     public function created(Booking $booking) // Dipanggil setelah data berhasil dimasukkan ke database (dengan id sudah tersedia).
     {
-        // Buat QR Code
         $qrContent = "Kode Booking: {$booking->code}\nAntrian: {$booking->queue_number}\nJam: {$booking->estimated_time}";
-        $qrImageBase64 = base64_encode(
-            QrCode::format('png')->size(300)->generate($qrContent)
-        );
+
+        // Buat instance DNS2D
+        $barcode = new DNS2D();
+
+        // Dapatkan base64 QR Code
+        $qrImageBase64 = $barcode->getBarcodePNG($qrContent, 'QRCODE');
 
         // Buat PDF
         $pdf = PDF::loadView('pdf.booking', [
