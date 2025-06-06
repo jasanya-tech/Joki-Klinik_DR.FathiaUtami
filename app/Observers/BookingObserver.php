@@ -43,16 +43,17 @@ class BookingObserver
     {
         // Buat QR Code
         $qrContent = "Kode Booking: {$booking->code}\nAntrian: {$booking->queue_number}\nJam: {$booking->estimated_time}";
-        $qrPath = "qrcodes/booking_{$booking->id}.png";
-        QrCode::format('png')->size(300)->generate($qrContent, public_path("storage/{$qrPath}"));
-
-        $booking->qr_code_path = $qrPath;
+        $qrImageBase64 = base64_encode(
+            QrCode::format('png')->size(300)->generate($qrContent)
+        );
 
         // Buat PDF
-        $pdf = Pdf::loadView('pdf.booking', ['booking' => $booking]);
-        $pdfPath = "pdfs/booking_{$booking->id}.pdf";
+        $pdf = PDF::loadView('pdf.booking', [
+            'booking' => $booking,
+            'qrImageBase64' => $qrImageBase64,
+        ]);
+
         return $pdf->stream("booking_{$booking->id}.pdf");
-        $booking->pdf_path = $pdfPath;
 
         $booking->saveQuietly();
     }
