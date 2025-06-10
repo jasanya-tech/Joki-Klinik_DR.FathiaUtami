@@ -2,16 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SettingResource\Pages;
-use App\Filament\Resources\SettingResource\RelationManagers;
-use App\Models\Setting;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Status;
+use App\Models\Setting;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\SettingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\SettingResource\RelationManagers;
 
 class SettingResource extends Resource
 {
@@ -23,23 +29,47 @@ class SettingResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('key')
+                TextInput::make('key')
                     ->required()
-                    ->maxLength(128),
-                Forms\Components\TextInput::make('value')
+                    ->maxLength(128)
+                    ->columnSpanFull(),
+                Select::make('type')
+                    ->label('Tipe Input')
+                    ->options([
+                        'Textarea' => "Text Area",
+                        'RichEditor' => 'Editor Teks',
+                        'UploadImage' => 'Unggah Gambar',
+                    ])
+                    ->default('RichEditor')
+                    ->afterStateUpdated(function (callable $set) {
+                        // $set('value', null);
+                    })
+                    ->reactive()
+                    ->columnSpanFull(),
+                RichEditor::make('value.RichEditor')
+                    ->label('Value (Rich Editor)')
+                    ->columnSpanFull()
+                    ->hidden(fn ($get) => $get('type') !== 'RichEditor'),
+
+                Textarea::make('value.Textarea')
+                    ->label('Value (Text Area)')
+                    ->autosize()
+                    ->columnSpanFull()
+                    ->hidden(fn ($get) => $get('type') !== 'Textarea'),
+
+                FileUpload::make('value.UploadImage')
+                    ->label('Unggah Gambar')
+                    ->image()
+                    ->directory('setting')
+                    ->columnSpanFull()
+                    ->hidden(fn ($get) => $get('type') !== 'UploadImage'),
+
+                Select::make('status_id')
                     ->required()
-                    ->maxLength(128),
-                Forms\Components\TextInput::make('status_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('created_by')
-                    ->required()
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('updated_by')
-                    ->numeric(),
-                Forms\Components\TextInput::make('deleted_by')
-                    ->numeric(),
+                    ->label('Status')
+                    ->searchable()
+                    ->columnSpanFull()
+                    ->options(Status::where('status_type_id', 1)->pluck('name', 'id')),
             ]);
     }
 
