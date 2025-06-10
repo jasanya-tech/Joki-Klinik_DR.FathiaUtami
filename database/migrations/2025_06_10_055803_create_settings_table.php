@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('setting', function (Blueprint $table) {
             $table->id();
             $table->string('key', 128);
-            $table->string('value', 128);
+            $table->text('value');
             $this->base($table);
         });
     }
