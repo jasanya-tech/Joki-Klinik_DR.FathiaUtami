@@ -20,7 +20,7 @@ class BookingTable extends BaseWidget
     public function table(Table $table): Table
     {
         return $table
-            ->query(Booking::query()->with('doctorSchedule', 'user'))
+            ->query(Booking::query())
             ->defaultPaginationPageOption(5)
             ->columns([
                 TextColumn::make('code')
