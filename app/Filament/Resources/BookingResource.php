@@ -53,15 +53,6 @@ class BookingResource extends Resource
                     ->label('User')
                     ->default(auth()->user()->id)
                     ->searchable(),
-                Select::make('doctor_schedule_id')
-                    ->required()
-                    ->options(
-                        DoctorSchedule::with('doctor.user')->get()->mapWithKeys(function ($schedule) {
-                            return [$schedule->id => $schedule->doctor->user->name ?? 'Tanpa Nama'];
-                        })
-                    )
-                    ->label('Doctor Schedule')
-                    ->searchable(),
                 DatePicker::make('booking_date')
                     ->required()
                     ->Label('Booking Date')
@@ -91,9 +82,6 @@ class BookingResource extends Resource
                     ->sortable(),
                 TextColumn::make('user.name')
                     ->label('Patient')
-                    ->sortable(),
-                TextColumn::make('doctorSchedule.doctor.user.name')
-                    ->label('Doctor')
                     ->sortable(),
                 TextColumn::make('booking_date')
                     ->label('Booking Date')

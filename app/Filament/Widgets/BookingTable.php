@@ -33,25 +33,8 @@ class BookingTable extends BaseWidget
                     ->label('Patient Name')
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('doctorSchedule.doctor.user.name')
-                    ->label('Doctor')
-                    ->sortable()
-                    ->searchable(),
                 TextColumn::make('booking_date')
                     ->label('Booking Date')
-                    ->sortable(),
-                TextColumn::make('doctorSchedule.day')
-                    ->label('Day')
-                    ->badge()
-                    ->color('primary')
-                    ->sortable(),
-                TextColumn::make('doctorSchedule.start_time')
-                    ->label('Booking Time')
-                    ->badge()
-                    ->color('info')
-                    ->formatStateUsing(function ($state) {
-                        return Carbon::parse($state)->format('H:i') . ' WIB';
-                    })
                     ->sortable(),
                 TextColumn::make('queue_number')
                     ->label('Queqeu Date')
