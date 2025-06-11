@@ -17,25 +17,22 @@ class BookingObserver
      */
     public function creating(Booking $booking) // Dipanggil sebelum data dimasukkan ke database.
     {
-        // Ambil jadwal dokter
-        $schedule = DoctorSchedule::findOrFail($booking->doctor_schedule_id);
-
         $today = Carbon::parse($booking->booking_date)->toDateString();
 
         // Hitung nomor antrian hari itu
         $lastQueue = Booking::whereDate('booking_date', $today)
-            ->where('doctor_schedule_id', $booking->doctor_schedule_id)
             ->max('queue_number');
 
         // Hitung estimasi waktu (misal: 15 menit per antrian)
         $queueNumber = $lastQueue ? $lastQueue + 1 : 1;
         $booking->queue_number = $queueNumber;
 
-        $estimatedTime = Carbon::parse($schedule->start_time)
-            ->addMinutes(15 * ($queueNumber - 1));
+        // Estimasi waktu mulai dari booking_date jam 08:00
+        $baseTime = Carbon::parse($booking->booking_date . ' 08:00');
+        $estimatedTime = $baseTime->addMinutes(15 * ($queueNumber - 1));
         $booking->estimated_time = $estimatedTime->format('H:i');
 
-         // Generate kode unik booking
+        // Generate kode unik booking
         $randomCode = strtoupper(Str::random(5)) . now()->format('Ymd');
         $booking->code = 'BOOK-' . $randomCode;
     }

@@ -40,7 +40,7 @@ class BookingController extends Controller
         try {
             $booking = Booking::create([
                 'user_id' => auth()->id(),
-                'doctor_schedule_id' => $request->doctor_schedule_id,
+                'doctor_id' => $request->doctor_id,
                 'complaint' => $request->complaint,
                 'booking_date' => $request->booking_date,
             ]);
