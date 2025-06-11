@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use App\Models\User;
 use Filament\Tables;
+use App\Models\Doctor;
 use App\Models\Status;
 use App\Models\Booking;
 use Filament\Forms\Form;
@@ -16,11 +17,11 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\BookingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BookingResource\RelationManagers;
-use Filament\Forms\Components\DatePicker;
 
 class BookingResource extends Resource
 {
@@ -53,10 +54,16 @@ class BookingResource extends Resource
                     ->label('User')
                     ->default(auth()->user()->id)
                     ->searchable(),
+                Select::make('doctor_id')
+                    ->required()
+                    ->searchable()
+                    ->options(Doctor::with('user')->get()->pluck('user.name', 'id'))
+                    ->label('Doctor Name'),
                 DatePicker::make('booking_date')
                     ->required()
                     ->Label('Booking Date')
-                    ->native(false),
+                    ->native(false)
+                    ->columnSpanFull(),
                 Textarea::make('complaint')
                     ->required()
                     ->columnSpanFull(),
@@ -85,6 +92,10 @@ class BookingResource extends Resource
                     ->sortable(),
                 TextColumn::make('booking_date')
                     ->label('Booking Date')
+                    ->sortable(),
+                TextColumn::make('doctor.user.name')
+                    ->label('Doctor Name')
+                    ->searchable()
                     ->sortable(),
                 TextColumn::make('doctorSchedule.day')
                     ->label('Day')
