@@ -27,7 +27,8 @@ class DoctorScheduleTable extends BaseWidget
                 ImageColumn::make('doctor.user.avatar_url')
                     ->label('Images')
                     ->circular()
-                    ->size(70),
+                    ->size(70)
+                    ->defaultImageUrl(asset('images/doctor1.png')),
                 TextColumn::make('doctor.user.name')
                     ->label('Doctor Name')
                     ->sortable(),
