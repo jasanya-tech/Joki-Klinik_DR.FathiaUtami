@@ -68,7 +68,8 @@ class DoctorResource extends Resource
                 ImageColumn::make('user.avatar_url')
                     ->label('Avatar')
                     ->circular()
-                    ->size(70),
+                    ->size(70)
+                    ->defaultImageUrl(asset('images/doctor1.png')),
                 TextColumn::make('user.name')
                     ->label('Name')
                     ->searchable(),

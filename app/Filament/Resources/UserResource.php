@@ -81,7 +81,8 @@ class UserResource extends Resource
                     ->label('Avatar')
                     ->disk('avatars')
                     ->size(70)
-                    ->circular(),
+                    ->circular()
+                    ->defaultImageUrl(asset('images/12.png')),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('email')
