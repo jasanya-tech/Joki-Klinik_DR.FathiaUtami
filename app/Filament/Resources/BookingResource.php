@@ -92,19 +92,11 @@ class BookingResource extends Resource
                     ->sortable(),
                 TextColumn::make('booking_date')
                     ->label('Booking Date')
+                    ->formatStateUsing(fn ($state) => \Carbon\Carbon::parse($state)->locale('id')->translatedFormat('l, d F Y'))
                     ->sortable(),
                 TextColumn::make('doctor.user.name')
                     ->label('Doctor Name')
                     ->searchable()
-                    ->sortable(),
-                TextColumn::make('doctorSchedule.day')
-                    ->label('Day')
-                    ->sortable(),
-                TextColumn::make('doctorSchedule.start_time')
-                    ->label('Start Time')
-                    ->formatStateUsing(function ($state) {
-                        return Carbon::parse($state)->format('H:i') . ' WIB';
-                    })
                     ->sortable(),
                 TextColumn::make('queue_number')
                     ->label('Queqeu Date')
