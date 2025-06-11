@@ -35,6 +35,7 @@ class BookingTable extends BaseWidget
                     ->searchable(),
                 TextColumn::make('booking_date')
                     ->label('Booking Date')
+                    ->formatStateUsing(fn ($state) => \Carbon\Carbon::parse($state)->locale('id')->translatedFormat('l, d F Y'))
                     ->sortable(),
                 TextColumn::make('queue_number')
                     ->label('Queqeu Date')
