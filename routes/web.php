@@ -36,3 +36,7 @@ Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware(['aut
 
 Route::put('/profile/update', [AuthController::class, 'updateProfile'])->middleware(['auth'])->name('profile.update');
 Route::put('/profile/password', [AuthController::class, 'updatePassword'])->name('password.update');
+
+Route::get('/cek-setting', function () {
+    return \App\Helpers\SettingHelper::getSetting('address');
+});

@@ -18,12 +18,19 @@ class Setting extends Model
         'value' => 'array',
     ];
 
-    public function setValueAttribute($value)
+    public function getValueAttribute($value)
     {
-        if (is_array($value)) {
-            $this->attributes['value'] = json_encode($value);
-        } else {
-            $this->attributes['value'] = $value;
+        if (!$value) return [];
+
+        switch ($this->type) {
+            case 'Textarea':
+                return ['Textarea' => $value];
+            case 'RichEditor':
+                return ['RichEditor' => $value];
+            case 'UploadImage':
+                return ['UploadImage' => $value];
+            default:
+                return $value;
         }
     }
 

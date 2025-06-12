@@ -53,7 +53,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-8">
                             <div class="sb-top-left-section">
                                 <div>
-                                    <a href="/mailto:{{ App\Helpers\SettingHelper::getSetting('email') }}"><span><i
+                                    <a href="mailto:{{ App\Helpers\SettingHelper::getSetting('email') }}"><span><i
                                                 class="fas fa-envelope"></i></span>&nbsp;
                                         &nbsp;{{ App\Helpers\SettingHelper::getSetting('email') }}</a>
                                 </div>
