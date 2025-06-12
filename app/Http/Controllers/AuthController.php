@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Testimoni;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,12 @@ class AuthController extends Controller
             ->take(3)
             ->get();
 
-        return view('welcome', compact('doctors', 'recentBlogs'));
+        $testimonials = Testimoni::with('booking.user', 'status')
+            ->where('status_id', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('welcome', compact('doctors', 'recentBlogs', 'testimonials'));
     }
     public function dashboard ()
     {
