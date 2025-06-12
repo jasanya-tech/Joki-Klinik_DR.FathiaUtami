@@ -41,6 +41,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $appends = [
+       'image_avatar_url',
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
@@ -64,4 +68,14 @@ class User extends Authenticatable
         $avatarColumn = config('filament-edit-profile.avatar_column', 'avatar_url');
         return $this->$avatarColumn ? Storage::disk('avatars')->url($this->$avatarColumn) : null;
     }
+
+    public function getImageAvatarUrlAttribute(): ?string
+    {
+        if(file_exists(public_path('storage/' . $this->avatar_url))) {
+            return asset('storage/' . $this->avatar_url);
+        }
+        return asset('images/default-avatar.jpeg'); // Ganti dengan path default avatar jika tidak ada
+    }
+
+
 }

@@ -13,10 +13,9 @@
                      Friendly <span>Health Care</span> <br>
                      For You
                   </h2>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a
-                     page when looking at its layout. The point of using Lorem Ipsum.
+                  <p> {{App\Helpers\SettingHelper::getSetting('home_banner_description') }}
                   </p>
-                  <a href="appoinment.html" class="button-btn mt-4">book now
+                  <a href="{{ route('doctors.index') }}" class="button-btn mt-4">book now
                      <span><i class="fas fa-angle-double-right"></i></span>
                   </a>
                </div>
@@ -180,26 +179,21 @@
                   <h5 class="text-start home1-section-heading2">What Our Client Say</h5>
                   <div class="text-slider">
                      <div class="owl-carousel owl-theme">
+                        @foreach ($testimonials as $testimonial)
                         <div class="item">
-                           <img src="images/test-image1.png" alt="img">
+                           <img src="{{$testimonial->booking->user->image_avatar_url}}" alt="img" class="img-fluid rounded-circle border border-5 border-danger" style="width: 150px">
                            <div class="item-box">
                               <span>
+                                 @for ($i = 0; $i < $testimonial->ratting; $i++)
                                  <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
+                                 @endfor
                               </span>
-                              <p class="py-2">It is a long established fact that a reader will be distracted
-                                 by the on
-                                 readable content of a page when looking at its layout. The point of
-                                 using Lorem Ipsum is that it has a more-or-less normal distribution.
-                                 long established fact that a reader will be distracted.
+                              <p class="py-2"> {{$testimonial->massage}}
                               </p>
-                              <a href="javascript:;">- Akshay H.</a>
+                              <a href="javascript:;">- {{$testimonial->booking->user->name}}.</a>
                            </div>
                         </div>
-                     
+                        @endforeach
                      </div>
                   </div>
                </div>
@@ -346,26 +340,22 @@
                   <div class="img-icon">
                      <img src="images/blog-img1.jpg" alt="img">
                      <div class="img-overlay"></div>
-                     <p class="text-center">08<br>
-                        july
+                     <p class="text-center">{{Carbon\Carbon::parse($blog->created_at)->format('d')}}<br>
+                        {{Carbon\Carbon::parse($blog->created_at)->format('M')}}
                      </p>
                   </div>
                   <div class="blog-content">
-                     <h3><a href="blog-single.html">Spending More and Getting Less
-                           for Health Care</a>
+                     <h3><a href="blog-single.html">{{ $blog->title }}</a>
                      </h3>
                      <ul>
-                        <li><a href="javascript:;"><i class="far fa-user"></i> by John Doe</a>
-                        </li>
-                        <li><a href="javascript:;"><i class="far fa-comments"></i>Comments 02
-                           </a>
+                        <li><a href="{{ route('blog.show', $blog->slug) }}"><i class="far fa-user"></i> {{ $blog->author }}</a>
                         </li>
                      </ul>
-                     <p>It is a long established fact that a reader will be
-                        distracted by the readable content of a page
-                        when looking at its layout.
+                     <p>
+                     {!! Str::limit($blog->body, 100, '...') !!}
+                        {{-- It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. --}}
                      </p>
-                     <a href="blog-single.html class="r-btn">Read More</a>
+                     <a href="{{ route('blog.show', $blog->slug) }}" class="r-btn">Read More</a>
                   </div>
                </div>
             </div>

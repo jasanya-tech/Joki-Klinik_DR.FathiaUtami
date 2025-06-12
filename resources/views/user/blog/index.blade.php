@@ -10,10 +10,10 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="sb-contact-section">
                         <nav aria-label="breadcrumb">
-                            <h4>Blog Left Sidebar</h4>
+                            <h4>Blog</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item " aria-current="page">Blog Left Sidebar</li>
+                                <li class="breadcrumb-item " aria-current="page">Blog</li>
                             </ol>
                         </nav>
                     </div>
@@ -36,7 +36,8 @@
                                         <input type="search" class="form-control" name="search" placeholder="Search"
                                             aria-describedby="search-button">
                                         <div class="input-group-append">
-                                            <span onclick="this.closest('form').submit();" class="input-group-text" style="cursor: pointer" id="search-button">
+                                            <span onclick="this.closest('form').submit();" class="input-group-text"
+                                                style="cursor: pointer" id="search-button">
                                                 <i class="fas fa-paper-plane"></i>
                                             </span>
                                         </div>
@@ -87,7 +88,8 @@
                         @if ($blogs->count() == 0)
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="alert alert-warning text-center" role="alert">
-                                    No blogs found. {{ request()->has('search') ? 'Try a different search term.' : 'Please check back later.' }}
+                                    No blogs found.
+                                    {{ request()->has('search') ? 'Try a different search term.' : 'Please check back later.' }}
                                 </div>
                             </div>
                         @endif
@@ -103,7 +105,7 @@
                                         </p>
                                     </div>
                                     <div class="blog-content">
-                                        <h3><a href="blog-single.html">{{ $blog->title }}</a>
+                                        <h3><a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a>
                                         </h3>
                                         <ul>
                                             <li><a href="javascript:;"><i class="far fa-user"></i> {{ $blog->author }}</a>
@@ -112,7 +114,8 @@
                                  </a>
                               </li> --}}
                                         </ul>
-                                        <p>{{ substr($blog->body, 0, 100) . '...' }}
+                                        {!! Str::limit($blog->body, 100, '...') !!}
+                                        <p>
                                         </p>
                                         <a href="{{ route('blog.show', $blog->slug) }}" class="r-btn">Read More</a>
                                     </div>

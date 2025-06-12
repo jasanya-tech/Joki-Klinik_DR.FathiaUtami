@@ -33,7 +33,7 @@
                             <i class="fas fa-user-circle me-2"></i> Informasi Profil Anda
                         </h4>
                         <div class="text-center mb-5">
-                            <img src="{{ asset('storage/' . (auth()->user()->avatar_url ?? 'avatars/default.svg')) }}"
+                            <img src="{{ auth()->user()->image_avatar_url }}"
                                 alt="Avatar Pengguna"
                                 class="img-fluid rounded-circle border border-5 border-danger shadow-lg mb-3"
                                 style="width: 180px; height: 180px; object-fit: cover;">
