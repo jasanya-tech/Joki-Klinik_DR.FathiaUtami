@@ -39,23 +39,7 @@ class BookingObserver
 
     public function created(Booking $booking) // Dipanggil setelah data berhasil dimasukkan ke database (dengan id sudah tersedia).
     {
-        $qrContent = "Kode Booking: {$booking->code}\nAntrian: {$booking->queue_number}\nJam: {$booking->estimated_time}";
-
-        // Buat instance DNS2D
-        $barcode = new DNS2D();
-
-        // Dapatkan base64 QR Code
-        $qrImageBase64 = $barcode->getBarcodePNG($qrContent, 'QRCODE');
-
-        // Buat PDF
-        $pdf = PDF::loadView('pdf.booking', [
-            'booking' => $booking,
-            'qrImageBase64' => $qrImageBase64,
-        ]);
-
-        return $pdf->stream("booking_{$booking->id}.pdf");
-
-        $booking->saveQuietly();
+        
     }
 
     /**

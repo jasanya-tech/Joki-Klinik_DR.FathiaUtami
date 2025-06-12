@@ -21,6 +21,11 @@ class BokkingRequest extends FormRequest
      */
     public function rules(): array
     {
+        // required
+
+        // booking_date
+        // complaint
+
         return [
             'user_id'             => 'required|exists:users,id',
             'doctor_schedule_id'  => 'required|exists:doctor_schedule,id',

@@ -14,7 +14,7 @@ class BannerHelper
      */
     public static function getBannerImageUrl(string $name): string
     {
-        $Banner = Banner::where('name', $name)->firstOrFail();
+        $Banner = Banner::where('name', $name)->first();
 
         if ($Banner && $Banner->image) {
             return asset('storage/' . $Banner->image);

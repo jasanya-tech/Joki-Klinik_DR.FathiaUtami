@@ -3,7 +3,7 @@
 
 @section('content')
    <!-- banner sction start -->
-   <div class="banner-section-wrapper float_left">
+   <div class="banner-section-wrapper float_left" style="background-image: url({{ asset(App\Helpers\BannerHelper::getBannerImageUrl('home')) }})">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -102,171 +102,8 @@
       </div>
    </div>
    <!-- About us section end -->
-   <!-- image about section start-->
-   <div class="image-about-wrapper float_left">
-      <div class="container ">
-         <div class="row plr-50">
-            <div class="col-lg-6 col-md-12">
-               <div class="image-section ps-rel ">
-                  <img src="images/about-img.jpg" alt="img">
-                  <div class="image-content ">
-                     <h5>Open Hours</h5>
-                     <ul class="content-box">
-                        <li>
-                           <ul>
-                              <li>Monday :</li>
-                              <li>Tuesday :</li>
-                              <li>Wednesday :</li>
-                              <li>Tuesday :</li>
-                              <li>Thursday :</li>
-                              <li>Friday :</li>
-                              <li>Saturday :</li>
-                           </ul>
-                        </li>
-                        <li>
-                           <ul>
-                              <li>08.00 - 10.00</li>
-                              <li>08.00 - 10.00</li>
-                              <li>08.00 - 10.00</li>
-                              <li>08.00 - 10.00</li>
-                              <li>08.00 - 10.00</li>
-                              <li>08.00 - 10.00</li>
-                              <li>08.00 - 10.00</li>
-                           </ul>
-                        </li>
-                     </ul>
-                     <div class="logo-icon">
-                        <img src="images/fav-icon.png" alt="img">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-               <div class="about-content ">
-                  <h6 class="home1-section-heading1 text-start">About Us</h6>
-                  <h4>Professional Health and Medical
-                     Care in Full Measure
-                  </h4>
-                  <p class="py-3">
-                     It is a long established fact that a reader will be distracted by the readable content of a
-                     page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                     more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                     here', making it look like readable English.
-                  </p>
-                  <p>
-                     It is a long established fact that a reader will be distracted by the readable
-                     content of a page when looking at its layout.
-                  </p>
-                  <a href="about-us.html" class="button-btn mt-4">Read More
-                     <span><i class="fas fa-angle-double-right"></i></span>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- image about section end-->
-   <!-- secvices section start  -->
-   <div class="services-main-wrapper float_left">
-      <div class="container	">
-         <div class="row">
-            <div class="col-lg-12 col-md-12">
-               <div class="sb-service-section">
-                  <h6 class="home1-section-heading1">Our Services</h6>
-                  <h5 class="home1-section-heading2">Special High-quality Services</h5>
-                  <p>It is a long established fact that a reader will be distracted by the readable<br>
-                     content of a page when looking at its layout.
-                  </p>
-                  <div class="slider-service-section">
-                     <div class="owl-carousel owl-theme">
-                        <div class="item wow fadeInUp" data-wow-delay=".15s">
-                           <div class="slider-box ">
-                              <span class="icon"><i class="far fa-heart"></i></span>
-                              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                 <defs>
-                                    <style>
-                                       .cls-1 {
-                                          fill: #e12454;
-                                          width: 45px;
-                                       }
-                                    </style>
-                                 </defs>
-                                 <title>stethoscope-outline</title>
-                                 <path class="cls-1"
-                                    d="M512,256a89.59,89.59,0,1,0-102.39,88.69V358.4a128.14,128.14,0,0,1-128,128c-67.06,0-122.22-51.83-127.56-117.54a38.41,38.41,0,0,0,25.17-36.06v-7.28c30-12.37,45.84-37.64,50.63-53l45.61-148.24a77.27,77.27,0,0,0-10-66.38A75.4,75.4,0,0,0,256,46.51c0-.57,0-1.13,0-1.71a44.83,44.83,0,1,0-10.72,29.07A51.77,51.77,0,0,1,251,116.79L205.4,265a65.26,65.26,0,0,1-31.78,35,38.4,38.4,0,0,0-66.2,1,64.87,64.87,0,0,1-33.9-36L27.92,116.79A51.81,51.81,0,0,1,34.62,72.3l.22-.3a44.8,44.8,0,1,0-9.19-28,75.07,75.07,0,0,0-12.22,14,77.27,77.27,0,0,0-10,66.38l45.62,148.3c4.92,15.73,21.55,42,53.35,54v6.22a38.41,38.41,0,0,0,26,36.34C133.93,448.84,200.53,512,281.61,512c84.69,0,153.59-68.91,153.59-153.6V344.69A89.61,89.61,0,0,0,512,256ZM211.22,64a19.2,19.2,0,1,1,19.2-19.2A19.22,19.22,0,0,1,211.22,64ZM70.43,25.6a19.2,19.2,0,1,1-19.2,19.2A19.22,19.22,0,0,1,70.43,25.6ZM128,320a12.8,12.8,0,1,1,25.6,0v12.8a12.8,12.8,0,1,1-25.6,0Zm294.38,0a64,64,0,1,1,64-64A64.07,64.07,0,0,1,422.41,320Zm0-102.4A38.4,38.4,0,1,0,460.8,256,38.4,38.4,0,0,0,422.41,217.6Zm0,51.2A12.8,12.8,0,1,1,435.2,256,12.81,12.81,0,0,1,422.41,268.8Z" />
-                              </svg>
-                              <h5>Covid-19</h5>
-                              <p>It is a long established fact that a reader
-                                 will be distracted by the readable the
-                                 content of a page when looking.
-                              </p>
-                              <a href="appoinment.html" class="button-btn mt-4">book now
-                                 <span><i class="fas fa-angle-double-right"></i></span>
-                              </a>
-                           </div>
-                        </div>
-                        <div class="item">
-                           <div class="slider-box wow fadeInUp" data-wow-delay=".25s">
-                              <span class="icon"><i class="far fa-heart"></i></span>
-                              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                 <defs>
-                                    <style>
-                                       .cls-1 {
-                                          fill: #e12454;
-                                          width: 45px;
-                                       }
-                                    </style>
-                                 </defs>
-                                 <title>stethoscope-outline</title>
-                                 <path class="cls-1"
-                                    d="M512,256a89.59,89.59,0,1,0-102.39,88.69V358.4a128.14,128.14,0,0,1-128,128c-67.06,0-122.22-51.83-127.56-117.54a38.41,38.41,0,0,0,25.17-36.06v-7.28c30-12.37,45.84-37.64,50.63-53l45.61-148.24a77.27,77.27,0,0,0-10-66.38A75.4,75.4,0,0,0,256,46.51c0-.57,0-1.13,0-1.71a44.83,44.83,0,1,0-10.72,29.07A51.77,51.77,0,0,1,251,116.79L205.4,265a65.26,65.26,0,0,1-31.78,35,38.4,38.4,0,0,0-66.2,1,64.87,64.87,0,0,1-33.9-36L27.92,116.79A51.81,51.81,0,0,1,34.62,72.3l.22-.3a44.8,44.8,0,1,0-9.19-28,75.07,75.07,0,0,0-12.22,14,77.27,77.27,0,0,0-10,66.38l45.62,148.3c4.92,15.73,21.55,42,53.35,54v6.22a38.41,38.41,0,0,0,26,36.34C133.93,448.84,200.53,512,281.61,512c84.69,0,153.59-68.91,153.59-153.6V344.69A89.61,89.61,0,0,0,512,256ZM211.22,64a19.2,19.2,0,1,1,19.2-19.2A19.22,19.22,0,0,1,211.22,64ZM70.43,25.6a19.2,19.2,0,1,1-19.2,19.2A19.22,19.22,0,0,1,70.43,25.6ZM128,320a12.8,12.8,0,1,1,25.6,0v12.8a12.8,12.8,0,1,1-25.6,0Zm294.38,0a64,64,0,1,1,64-64A64.07,64.07,0,0,1,422.41,320Zm0-102.4A38.4,38.4,0,1,0,460.8,256,38.4,38.4,0,0,0,422.41,217.6Zm0,51.2A12.8,12.8,0,1,1,435.2,256,12.81,12.81,0,0,1,422.41,268.8Z" />
-                              </svg>
-                              <h5>Full Stathoscope</h5>
-                              <p>It is a long established fact that a reader
-                                 will be distracted by the readable the
-                                 content of a page when looking.
-                              </p>
-                              <a href="appoinment.html" class="button-btn mt-4">book now
-                                 <span><i class="fas fa-angle-double-right"></i></span>
-                              </a>
-                           </div>
-                        </div>
-                        <div class="item">
-                           <div class="slider-box wow fadeInUp" data-wow-delay=".35s">
-                              <span class="icon"><i class="far fa-heart"></i></span>
-                              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                 <defs>
-                                    <style>
-                                       .cls-1 {
-                                          fill: #e12454;
-                                          width: 45px;
-                                       }
-                                    </style>
-                                 </defs>
-                                 <title>stethoscope-outline</title>
-                                 <path class="cls-1"
-                                    d="M512,256a89.59,89.59,0,1,0-102.39,88.69V358.4a128.14,128.14,0,0,1-128,128c-67.06,0-122.22-51.83-127.56-117.54a38.41,38.41,0,0,0,25.17-36.06v-7.28c30-12.37,45.84-37.64,50.63-53l45.61-148.24a77.27,77.27,0,0,0-10-66.38A75.4,75.4,0,0,0,256,46.51c0-.57,0-1.13,0-1.71a44.83,44.83,0,1,0-10.72,29.07A51.77,51.77,0,0,1,251,116.79L205.4,265a65.26,65.26,0,0,1-31.78,35,38.4,38.4,0,0,0-66.2,1,64.87,64.87,0,0,1-33.9-36L27.92,116.79A51.81,51.81,0,0,1,34.62,72.3l.22-.3a44.8,44.8,0,1,0-9.19-28,75.07,75.07,0,0,0-12.22,14,77.27,77.27,0,0,0-10,66.38l45.62,148.3c4.92,15.73,21.55,42,53.35,54v6.22a38.41,38.41,0,0,0,26,36.34C133.93,448.84,200.53,512,281.61,512c84.69,0,153.59-68.91,153.59-153.6V344.69A89.61,89.61,0,0,0,512,256ZM211.22,64a19.2,19.2,0,1,1,19.2-19.2A19.22,19.22,0,0,1,211.22,64ZM70.43,25.6a19.2,19.2,0,1,1-19.2,19.2A19.22,19.22,0,0,1,70.43,25.6ZM128,320a12.8,12.8,0,1,1,25.6,0v12.8a12.8,12.8,0,1,1-25.6,0Zm294.38,0a64,64,0,1,1,64-64A64.07,64.07,0,0,1,422.41,320Zm0-102.4A38.4,38.4,0,1,0,460.8,256,38.4,38.4,0,0,0,422.41,217.6Zm0,51.2A12.8,12.8,0,1,1,435.2,256,12.81,12.81,0,0,1,422.41,268.8Z" />
-                              </svg>
-                              <h5>Heart Specialest</h5>
-                              <p>It is a long established fact that a reader
-                                 will be distracted by the readable the
-                                 content of a page when looking.
-                              </p>
-                              <a href="appoinment.html" class="button-btn mt-4">book now
-                                 <span><i class="fas fa-angle-double-right"></i></span>
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- secvices section End  -->
    <!-- emergency section start -->
-   <div class="emergency-main-wrapper">
+   <div class="emergency-main-wrapper" style="background-image: url('{{ App\Helpers\BannerHelper::getBannerImageUrl('emergency') }}');">
       <div class="container">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
@@ -288,7 +125,7 @@
                   </p>
                   <div class="content">
                      <span class="rotate"><i class="fas fa-phone-volume"></i></span>
-                     <h4>+88 28624 79555</h4>
+                     <h4>{{App\Helpers\SettingHelper::getSetting('phone')}}</h4>
                   </div>
                </div>
             </div>
@@ -309,68 +146,28 @@
                   </p>
                </div>
             </div>
+            @foreach ($doctors as $doctor)
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                <div class="team-section">
                   <div class="image">
-                     <img src="images/team-3.png" alt="img">
-                     <div class='contact-action '>
+                     <img src="{{asset('storage/'.$doctor->user->avatar_url)}}" width="100%" alt="img">
+                     {{-- <div class='contact-action '>
                         <div class='item plus-sign ' onclick="actionToggleOne();"> + </div>
                         <span class='item icon-bg'> <i class="fab fa-facebook-f"></i></span>
                         <span class='item icon-bg'> <i class="fab fa-twitter"></i> </span>
-                     </div>
+                     </div> --}}
                   </div>
-                  <h5><a href="dr-single.html">Dr. Aimee Devlin</a></h5>
-                  <p><a href="dr-single.html">Psychiatrist</a></p>
+                  <h5><a href="{{route('doctors.show', $doctor->id)}}">{{$doctor->user->name}}</a></h5>
+                  <p><a href="{{route('doctors.show', $doctor->id)}}">{{$doctor->spesialis}}</a></p>
                </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-               <div class="team-section">
-                  <div class="image">
-                     <img src="images/team-2.png" alt="img">
-                     <div class='contact-action action-1'>
-                        <div class='item plus-sign' onclick="actionToggleTwo();"> + </div>
-                        <span class='item icon-bg'> <i class="fab fa-facebook-f"></i></span>
-                        <span class='item icon-bg'> <i class="fab fa-twitter"></i> </span>
-                     </div>
-                  </div>
-                  <h5><a href="dr-single.html">Dr. Khalid Abbed</a></h5>
-                  <p><a href="dr-single.html">Oncologist</a></p>
-               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-               <div class="team-section">
-                  <div class="image">
-                     <img src="images/team-3.png" alt="img">
-                     <div class='contact-action action-2'>
-                        <div class='item plus-sign' onclick="actionToggleThree();"> + </div>
-                        <span class='item icon-bg'> <i class="fab fa-facebook-f"></i></span>
-                        <span class='item icon-bg'> <i class="fab fa-twitter"></i> </span>
-                     </div>
-                  </div>
-                  <h5><a href="dr-single.html">Dr. Arthur Reese</a></h5>
-                  <p><a href="dr-single.html">Hepatologist</a></p>
-               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-               <div class="team-section">
-                  <div class="image">
-                     <img src="images/team-4.png" alt="img">
-                     <div class='contact-action action-3'>
-                        <div class='item plus-sign' onclick="actionToggleFour();"> + </div>
-                        <span class='item icon-bg'> <i class="fab fa-facebook-f"></i></span>
-                        <span class='item icon-bg'> <i class="fab fa-twitter"></i> </span>
-                     </div>
-                  </div>
-                  <h5><a href="dr-single.html">Dr. Nisha Ohri</a></h5>
-                  <p><a href="dr-single.html">Dr. Nisha Ohri</a></p>
-               </div>
-            </div>
+            @endforeach
          </div>
       </div>
    </div>
    <!-- images section -->
    <div class="image-wrapper float_left">
-      <img src="images/doctors-image.jpg" alt="img">
+      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider') }}" alt="divider" class="img-fluid">
    </div>
    <!-- our team section end -->
    <!-- testimonial section start -->
@@ -402,25 +199,7 @@
                               <a href="javascript:;">- Akshay H.</a>
                            </div>
                         </div>
-                        <div class="item">
-                           <img src="images/test-image2.png" alt="img">
-                           <div class="item-box">
-                              <span>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                                 <i class="fas fa-star"></i>
-                              </span>
-                              <p class="py-2">It is a long established fact that a reader will be distracted
-                                 by the on
-                                 readable content of a page when looking at its layout. The point of
-                                 using Lorem Ipsum is that it has a more-or-less normal distribution.
-                                 long established fact that a reader will be distracted.
-                              </p>
-                              <a href="javascript:;">- Akshay H.</a>
-                           </div>
-                        </div>
+                     
                      </div>
                   </div>
                </div>
@@ -429,107 +208,8 @@
       </div>
    </div>
    <!-- testimonial section End-->
-   <!-- blog section start -->
-   <div class="blog-main-wrapper">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12 col-md-12 col sm-12 col-12">
-               <div class="sb-blog-main-section">
-                  <h6 class="home1-section-heading1 "> Our Blog</h6>
-                  <h5 class="home1-section-heading2">Our Latest News</h5>
-                  <p>It is a long established fact that a reader will be distracted by the readable
-                     <br>content of a page when looking at its layout.
-                  </p>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-               <div class="blog-box">
-                  <div class="img-icon">
-                     <img src="images/blog-img1.jpg" alt="img">
-                     <div class="img-overlay"></div>
-                     <p class="text-center">08<br>
-                        july
-                     </p>
-                  </div>
-                  <div class="blog-content">
-                     <h3><a href="blog-single.html">Spending More and Getting Less
-                           for Health Care</a>
-                     </h3>
-                     <ul>
-                        <li><a href="javascript:;"><i class="far fa-user"></i> by John Doe</a>
-                        </li>
-                        <li><a href="javascript:;"><i class="far fa-comments"></i>Comments 02
-                           </a>
-                        </li>
-                     </ul>
-                     <p>It is a long established fact that a reader will be
-                        distracted by the readable content of a page
-                        when looking at its layout.
-                     </p>
-                     <a href="blog-single.html class="r-btn">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-               <div class="blog-box">
-                  <div class="img-icon">
-                     <img src="images/blog-img2.jpg" alt="img">
-                     <div class="img-overlay"></div>
-                     <p class="text-center">20<br>
-                        july
-                     </p>
-                  </div>
-                  <div class="blog-content">
-                     <h3><a href="blog-single.html">Aliq is notm hendr erit a augue insu image pellen
-                           tes</a>
-                     </h3>
-                     <ul>
-                        <li><a href="javascript:;"><i class="far fa-user"></i> by John Doe</a>
-                        </li>
-                        <li><a href="javascript:;"><i class="far fa-comments"></i>Comments 02
-                           </a>
-                        </li>
-                     </ul>
-                     <p>It is a long established fact that a reader will be
-                        distracted by the readable content of a page
-                        when looking at its layout.
-                     </p>
-                     <a href="blog-single.html" class="r-btn">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-               <div class="blog-box">
-                  <div class="img-icon">
-                     <img src="images/blog-img3.jpg" alt="img">
-                     <div class="img-overlay"></div>
-                     <p class="text-center">28<br>
-                        july
-                     </p>
-                  </div>
-                  <div class="blog-content">
-                     <h3><a href="blog-single.html">Healthy New Year’s resolutions and how to keep them</a></h3>
-                     <ul>
-                        <li><a href="javascript:;"><i class="far fa-user"></i> by John Doe</a>
-                        </li>
-                        <li><a href="javascript:;"><i class="far fa-comments"></i>Comments 02
-                           </a>
-                        </li>
-                     </ul>
-                     <p>It is a long established fact that a reader will be
-                        distracted by the readable content of a page
-                        when looking at its layout.
-                     </p>
-                     <a href="blog-single.html" class="r-btn">Read More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- blog section end -->
-   <!-- counter section start -->
-   <div class="counter-main-wrapper">
+      <!-- counter section start -->
+   <div class="counter-main-wrapper" style="background-image: url('{{ App\Helpers\BannerHelper::getBannerImageUrl('counter') }}');">
       <div class="container">
          <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -546,7 +226,7 @@
                            d="M56,56H43c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1h13c0.553,0,1-0.447,1-1v-4C57,56.447,56.553,56,56,56z M55,60H44v-2  h11V60z" />
                      </svg>
                   </div>
-                  <h3 class="counter-count">4500</h3>
+                  <h3 class="counter-count">{{App\Helpers\SettingHelper::getSetting('happy_patients')}}</h3>
                   <p class="mb-3">Happy Patients</p>
                </div>
             </div>
@@ -595,8 +275,8 @@
                         <rect x="42" y="48" width="2" height="2" />
                      </svg>
                   </div>
-                  <h3 class="counter-count">200</h3>
-                  <p class="mb-3">Hospital Rooms</p>
+                  <h3 class="counter-count">{{App\Helpers\SettingHelper::getSetting('doctors_count')}}</h3>
+                  <p class="mb-3">Doctors</p>
                </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -615,8 +295,8 @@
                                     C41.6,32.2,41.4,31.6,40.9,31.1z M34.3,91l3.5-28h24.5l3.5,28H34.3z" />
                      </svg>
                   </div>
-                  <h3 class="counter-count">450</h3>
-                  <p class="mb-3">Award Win</p>
+                  <h3 class="counter-count">{{App\Helpers\SettingHelper::getSetting('certificates_count')}}</h3>
+                  <p class="mb-3">Certificates</p>
                </div>
             </div>
             <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12">
@@ -639,40 +319,61 @@
                         </g>
                      </svg>
                   </div>
-                  <h3 class="counter-count">20</h3>
-                  <p class="mb-3">Ambulance</p>
+                  <h3 class="counter-count">{{App\Helpers\SettingHelper::getSetting('total_patients')}}</h3>
+                  <p class="mb-3">Total patients</p>
                </div>
             </div>
          </div>
       </div>
    </div>
    <!-- counter section end -->
-   <!-- partner section start -->
-   <div class="partner-main-wrapper">
+   <!-- blog section start -->
+   <div class="blog-main-wrapper">
       <div class="container">
          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-               <div class="sb-partner-wrapper">
-                  <div class="owl-carousel owl-theme">
-                     <div class="item">
-                        <img src="images/p-logos1.png" alt="img">
-                     </div>
-                     <div class="item">
-                        <img src="images/p-logos2.png" alt="img">
-                     </div>
-                     <div class="item">
-                        <img src="images/p-logos3.png" alt="img">
-                     </div>
-                     <div class="item">
-                        <img src="images/p-logos4.png" alt="img">
-                     </div>
-                     <div class="item">
-                        <img src="images/p-logos5.png" alt="img">
-                     </div>
+            <div class="col-lg-12 col-md-12 col sm-12 col-12">
+               <div class="sb-blog-main-section">
+                  <h6 class="home1-section-heading1 "> Our Blog</h6>
+                  <h5 class="home1-section-heading2">Our Latest News</h5>
+                  <p>It is a long established fact that a reader will be distracted by the readable
+                     <br>content of a page when looking at its layout.
+                  </p>
+               </div>
+            </div>
+            @foreach ($recentBlogs as $blog)
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+               <div class="blog-box">
+                  <div class="img-icon">
+                     <img src="images/blog-img1.jpg" alt="img">
+                     <div class="img-overlay"></div>
+                     <p class="text-center">08<br>
+                        july
+                     </p>
+                  </div>
+                  <div class="blog-content">
+                     <h3><a href="blog-single.html">Spending More and Getting Less
+                           for Health Care</a>
+                     </h3>
+                     <ul>
+                        <li><a href="javascript:;"><i class="far fa-user"></i> by John Doe</a>
+                        </li>
+                        <li><a href="javascript:;"><i class="far fa-comments"></i>Comments 02
+                           </a>
+                        </li>
+                     </ul>
+                     <p>It is a long established fact that a reader will be
+                        distracted by the readable content of a page
+                        when looking at its layout.
+                     </p>
+                     <a href="blog-single.html class="r-btn">Read More</a>
                   </div>
                </div>
             </div>
+            @endforeach
          </div>
       </div>
    </div>
+   <!-- blog section end -->
+
+
 @endsection

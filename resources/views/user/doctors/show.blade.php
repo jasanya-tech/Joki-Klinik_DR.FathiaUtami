@@ -18,26 +18,7 @@
                         <h3 class="p-0">{{$doctor->user->name}}</h3>
                         </h3>
                         <span>{{$doctor->spesialis}}</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                           been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                           galley of type and scrambled it to make a type specimen book. It has survived not only five
-                           centuries, but also the leap into electronic typesetting.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                           been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                           galley of type and scrambled it to make a type specimen book.</p>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting,
-                           remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and
-                           typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                           c1500s. When an unknown printer took a galley of type and scrambled it to make a type
-                           specimen book. It has survived not only five centuries, but also the leap into electronic
-                           typesetting, remaining essentially unchanged.</p>
-                        {{-- <div class="quote-sec">
-                           <p>" The Education of Tomorrow, Rooted in Tradition Invite You
-                              Learning Management System"
-                           </p>
-                           <h6>- by Aimee Devlin</h6>
-                           <img src="images/quote.png" alt="img">
-                        </div> --}}
+                        <p>{{$doctor->desc}}</p>
                      </div>
                   </div>
                </div>
@@ -65,7 +46,7 @@
 
                           <div class="consult-wrap">
                         <div>
-                           <a href="appoinment.html" class="button-btn mt-4 w-100">Book an Appointment
+                           <a href="{{route('doctors.appoinment',  $doctor->id)}}" class="button-btn mt-4 w-100">Book an Appointment
                               <span><i class="fas fa-angle-double-right"></i></span>
                            </a>
                         </div>

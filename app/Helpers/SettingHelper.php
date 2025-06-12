@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 use App\Models\Setting;
 
-class SettingHelpers
+class SettingHelper
 {
 
     public static function getSetting($key)
@@ -12,7 +12,7 @@ class SettingHelpers
         $setting = Setting::where(
             'key',
             $key
-        )->where('active', true)->first();
+        )->first();
 
         if ($setting) {
             if ($setting->type != null) {
@@ -20,6 +20,6 @@ class SettingHelpers
             }
         }
 
-        return "";
+        return "Please set the setting for " . $key;
     }
 }

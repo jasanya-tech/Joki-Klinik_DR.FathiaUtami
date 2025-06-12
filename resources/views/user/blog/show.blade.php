@@ -23,13 +23,7 @@
                         </ul>
                         {{$blog->body}}
                        
-                        <div class="quote-sec">
-                           <p>" The Education of Tomorrow, Rooted in Tradition Invite You
-                              Learning Management System"
-                           </p>
-                           <h6>- by Jhon Doe</h6>
-                           <img src="images/quote.png" alt="img">
-                        </div>
+                  
                         <div class="tag-with-media">
                            <div class="d-flex justfiy-content-start align-items-baseline resp-disply">
                               <p class="m-0"><span class="p-2"><i class="fas fa-tag"></i></span>Tags:</p>

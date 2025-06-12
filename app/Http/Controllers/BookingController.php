@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Requests\BokkingRequest;
 use Illuminate\Support\Facades\Storage;
+use Milon\Barcode\DNS2D;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class BookingController extends Controller
@@ -21,6 +22,32 @@ class BookingController extends Controller
     public function index()
     {
         //
+    }
+
+    public function pdf($id){
+        // Ambil data booking yang terakhir dibuat oleh user yang sedang login
+        $booking = Booking::with(['user', 'doctor.user'])
+            ->where('id', $id)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+
+
+          $qrContent = "Kode Booking: {$booking->code}\nAntrian: {$booking->queue_number}\nJam: {$booking->estimated_time}";
+
+        // Buat instance DNS2D
+        $barcode = new DNS2D();
+
+        // Dapatkan base64 QR Code
+        $qrImageBase64 = $barcode->getBarcodePNG($qrContent, 'QRCODE');
+
+        // Buat PDF
+        $pdf = PDF::loadView('pdf.booking', [
+            'booking' => $booking,
+            'qrImageBase64' => $qrImageBase64,
+        ]);
+
+
+        return $pdf->stream("booking_{$booking->id}.pdf");
     }
 
     /**

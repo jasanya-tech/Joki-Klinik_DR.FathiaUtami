@@ -2,13 +2,13 @@
 
 @section('content')
     <!-- breadcrumb  start-->
-    <div class="contact-main-wrapper">
+    <div class="contact-main-wrapper" style="background-image: url({{ asset(App\Helpers\BannerHelper::getBannerImageUrl('doctor')) }})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="sb-contact-section">
                         <nav aria-label="breadcrumb">
-                            <h4>Our Team</h4>
+                            <h4>Doctors</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                 <li class="breadcrumb-item " aria-current="page">Our Team</li>
@@ -35,7 +35,7 @@
                 @foreach ($doctors as $doctor)
                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="sb-founder-section pt-5">
-                            <img src="images/founder-img1.png" alt="img">
+                            <img src="{{ asset('storage/' . $doctor->user->avatar_url) }}" width="100%" alt="img">
                             <section>
                                 <div class="sb-service-section2 bg-change2">
                                     <a href="{{ route('doctors.show', $doctor->id) }}" class="d-inline-block">
@@ -44,7 +44,7 @@
                                     <p>{{ $doctor->spesialis }}</p>
                                 </div>
                                 <div class="hover-type">
-                                    <a href="appoinment.html" class="d-inline-block w-100 text-center">Book Now</a>
+                                    <a href="{{ route('doctors.appoinment', $doctor->id) }}" class="d-inline-block w-100 text-center">Book Now</a>
                                 </div>
                             </section>
                         </div>

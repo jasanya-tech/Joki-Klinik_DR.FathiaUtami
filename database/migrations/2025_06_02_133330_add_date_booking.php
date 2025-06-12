@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('booking', function (Blueprint $table) {
-            $table->date('booking_date');
+            $table->date('booking_date')->default(now());
             $table->unsignedInteger('queue_number')->nullable();
             $table->time('estimated_time')->nullable();
             $table->string('qr_code_path')->nullable(); 
@@ -26,12 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('booking', function (Blueprint $table) {
-            $table->dropColumn('booking_date');
-            $table->dropColumn('queue_number');
-            $table->dropColumn('estimated_time');
-            $table->dropColumn('qr_code_path');
-            $table->dropColumn('pdf_path');
-            
+            $table->dropColumn(['booking_date', 'queue_number', 'estimated_time', 'qr_code_path', 'pdf_path']);
         });
     }
 };
