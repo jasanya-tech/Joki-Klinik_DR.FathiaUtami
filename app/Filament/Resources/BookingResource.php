@@ -73,7 +73,6 @@ class BookingResource extends Resource
                     ->required()
                     ->label('Status')
                     ->searchable()
-                    ->default(4)
                     ->options(Status::where('status_type_id', 2)->pluck('name', 'id')),
             ]);
     }
