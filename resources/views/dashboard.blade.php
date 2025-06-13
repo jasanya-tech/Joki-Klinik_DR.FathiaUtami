@@ -148,8 +148,8 @@
                                             <td><span
                                                     class="badge bg-info text-white fs-6">{{ $booking->queue_number }}</span>
                                             </td>
-                                            <td>{{ $booking->doctor_schedule->doctor->user->name ?? 'N/A' }}</td>
-                                            <td>{{ $booking->doctor_schedule->doctor->spesialis ?? 'N/A' }}</td>
+                                            <td>{{ $booking->doctor->user->name ?? 'N/A' }}</td>
+                                            <td>{{ $booking->doctor->spesialis ?? 'N/A' }}</td>
                                             <td>
                                                 @php
                                                     $statusClass = match ($booking->status->name) {
