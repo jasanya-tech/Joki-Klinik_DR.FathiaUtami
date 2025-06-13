@@ -338,7 +338,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                <div class="blog-box">
                   <div class="img-icon">
-                     <img src="images/blog-img1.jpg" alt="img">
+                     <img src="{{ asset('storage/' . $blog->thumbnail)}}" alt="img">
                      <div class="img-overlay"></div>
                      <p class="text-center">{{Carbon\Carbon::parse($blog->created_at)->format('d')}}<br>
                         {{Carbon\Carbon::parse($blog->created_at)->format('M')}}

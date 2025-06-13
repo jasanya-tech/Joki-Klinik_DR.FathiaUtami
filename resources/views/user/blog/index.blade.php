@@ -34,7 +34,7 @@
                                 <form action="{{ route('blog.index') }}" method="get">
                                     <div class="input-group">
                                         <input type="search" class="form-control" name="search" placeholder="Search"
-                                            aria-describedby="search-button">
+                                            value="{{ request()->get('search') }}" aria-describedby="search-button">
                                         <div class="input-group-append">
                                             <span onclick="this.closest('form').submit();" class="input-group-text"
                                                 style="cursor: pointer" id="search-button">

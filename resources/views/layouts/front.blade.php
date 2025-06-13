@@ -81,7 +81,7 @@
                                             <span>
                                                 <a href="{{ route('login') }}">Login</a>
                                                 /
-                                                <a href="register.html">Register</a>
+                                                <a href="{{ route('register') }}">Register</a>
                                             </span>
                                         @endauth
 
@@ -106,13 +106,13 @@
                             <div class="sb-mid-right-section">
                                 <ul>
                                     <li>
-                                        <a href="contact-us.html"><i class="fas fa-map-marker-alt"></i></a>
+                                        <a href="javascript:;"><i class="fas fa-map-marker-alt"></i></a>
                                         <a
-                                            href="contact-us.html">{{ App\Helpers\SettingHelper::getSetting('address') }}</a>
+                                            href="javascript:;">{{ App\Helpers\SettingHelper::getSetting('address') }}</a>
                                     </li>
                                     <li>
-                                        <a href="contact-us.html"><i class="fas fa-phone"></i></a>
-                                        <a href="contact-us.html">Call Us 24/7<br>
+                                        <a href="javascript:;"><i class="fas fa-phone"></i></a>
+                                        <a href="javascript:;">Call Us 24/7<br>
                                             {{ App\Helpers\SettingHelper::getSetting('phone') }}</a>
                                         </a>
                                     </li>
@@ -136,90 +136,19 @@
                                         <a class="nav-link" href="{{ route('doctors.index') }}">Doctors
                                         </a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                              <a class="nav-link" href="javascript:;">Pages
-                                 <span><i class="fas fa-chevron-right"></i></span>
-                              </a>
-                              <ul class="dropdown-items">
-                                 <li><a href="about-us.html">About Us</a></li>
-                                 <li><a href="all-dr.html">Doctors</a></li>
-                                 <li><a href="dr-single.html">Doctor single</a></li>
-                                 <li><a href="appoinment.html">Appoinment</a></li>
-                                 <li><a href="error404.html">404</a></li>
-                              </ul>
-                           </li> --}}
-                                    {{-- <li class="nav-item ps-rel">
-                              <a class="nav-link" href="javascript:;">Services
-                                 <span><i class="fas fa-chevron-right"></i></span>
-                              </a>
-                              <ul class="dropdown-items">
-                                 <li><a href="service.html">Service
-                                    <span><i class="fas fa-chevron-right"></i></span>
-                                 </a>
-                                 <ul class="sub-dropdown">
-                                    <li><a href="covid-single.html">Covid 19</a></li>
-                                    <li><a href="stathoscope-single.html">Full Stathoscope</a></li>
-                                    <li><a href="heart-specialist.html">Heart Specialist</a></li>
-                                    <li><a href="blood-bank.html">Blood Bank</a></li>
-                                    <li><a href="disable.html">For Disable</a></li>
-                                    <li><a href="psychiatrist.html">Psychiatrist</a></li>
-                                 </ul>
-                              </li>
-                                 <li><a href="single-details.html">Service Details</a></li>
-                              </ul>
-                           </li> --}}
-                                    {{-- <li class="nav-item ps-rel">
-                              <a class="nav-link" href="javascript:;">Gallery
-                                 <span><i class="fas fa-chevron-right"></i></span>
-                              </a>
-                              <ul class="dropdown-items">
-                                 <li><a href="gallery.html">3 Columns</a></li>
-                                 <li><a href="gallery2.html">4 Columns</a></li>
-                                 <li><a href="gallery3.html">5 Columns</a></li>
-                              </ul>
-                           </li> --}}
+
                                     <li class="nav-item ps-rel">
                                         <a class="nav-link active" href="{{ route('blog.index') }}">Blog
                                         </a>
-                                        {{-- <li class="nav-item ps-rel">
-                              <a class="nav-link" href="javascript:;">Shortcode
-                                 <span><i class="fas fa-chevron-right"></i></span>
-                              </a>
-                              <div class="dropdown-items mega-menu">
-                                 <ul>
-                                    <li><a href="accordion.html">Accordion</a></li>
-                                    <li><a href="client.html">Client</a></li>
-                                    <li><a href="counter.html">Counter</a></li>
-                                    <li><a href="form.html">Form</a></li>
 
-                                 </ul>
-                                 <ul>
-                                    <li><a href="alert.html">Alert</a></li>
-                                    <li><a href="icon.html">Icon</a></li>
-                                    <li><a href="list.html">List</a></li>
-                                    <li><a href="pricing-table.html">Pricing Table</a></li>
-                                 </ul>
-                                 <ul>
-                                    <li><a href="button.html">Button</a></li>
-                                    <li><a href="tab.html">Tabs</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="testimonials.html">Testimonial</a></li>
-                                 </ul>
-                                 <ul>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                    <li><a href="social-icon.html">Social Icon</a></li>
-                                 </ul>
-                              </div>
-                           </li> --}}
-                                        {{-- <li class="nav-item">
-                              <a class="nav-link" href="contact-us.html">Contact Us</a>
-                           </li> --}}
                                 </ul>
                             </nav>
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <form class="d-flex justify-content-end ps-rel">
-                                <input class="" placeholder="Search">
+                            <form class="d-flex justify-content-end ps-rel" action="{{ route('blog.index') }}"
+                                method="GET">
+                                <input class="" placeholder="Search" name="search"
+                                    value="{{ request()->get('search') }}" type="text" aria-label="Search">
                                 <span><i class="fas fa-search"></i></span>
                             </form>
                         </div>
@@ -253,85 +182,19 @@
             </div>
             <div id="sidebar">
                 <div class="sidebar_logo">
-                    <a href="javascript:;"><img src="images/logo.png" alt="img"></a>
+                    <a href="javascript:;"><img src="{{ asset('images/logo.png') }}" alt="img" width="200"></a>
                 </div>
                 <div id="toggle_close">&times;</div>
                 <div id='cssmenu'>
                     <ul class="float_left">
-                        <li class="has-sub">
-                            <a href="javascript:;">Home</a>
-                            <ul>
-                                <li><a href="index.html">Home 01</a></li>
-                                <li><a href="index2.html">Home 02</a></li>
-                                <li><a href="index3.html">Home 03</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="about-us.html">about</a></li>
-                        <li><a href="all-dr.html">Doctors</a></li>
-                        <li><a href="dr-single.html">Doctor Single</a></li>
-                        <li><a href="appoinment.html">Appointment</a></li>
-                        <li class="has-sub">
-                            <a href="javascript:;">Services</a>
-                            <ul>
-                                <li><a href="service.html">Service</a></li>
-                                <li><a href="single-details.html">Service Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a href="javascript:;">Gallery</a>
-                            <ul>
-                                <li><a href="gallery.html">3 Columns</a></li>
-                                <li><a href="gallery2.html">4 Columns</a></li>
-                                <li><a href="gallery3.html">5 Columns</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a href="javascript:;">Blog</a>
-                            <ul>
-                                <li><a href="blog-left-sidebar.html">Blog Left-sidebar</a></li>
-                                <li><a href="blog-right-sidebar.html">Blog Right-sidebar</a></li>
-                                <li class="has-sub">
-                                    <a class="sub-icon">Blog Single</a>
-                                    <ul class="m-sub-dropdown">
-                                        <li><a href="blog-single.html">Blog single</a></li>
-                                        <li><a href="blog-single-slider.html">Blog single slider</a></li>
-                                        <li><a href="blog-single-video.html">Blog single video</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a href="javascript:;">Shortcode</a>
-                            <ul>
-                                <li><a href="accordion.html">Accordion</a></li>
-                                <li><a href="client.html">Client</a></li>
-                                <li><a href="counter.html">Counter</a></li>
-                                <li><a href="form.html">Form</a></li>
-                                <li><a href="alert.html">Alert</a></li>
-                                <li><a href="icon.html">Icon</a></li>
-                                <li><a href="list.html">List</a></li>
-                                <li><a href="pricing-table.html">Pricing Table</a></li>
-                                <li><a href="button.html">Button</a></li>
-                                <li><a href="tab.html">Tabs</a></li>
-                                <li><a href="team.html">Team</a></li>
-                                <li><a href="testimonials.html">Testimonial</a></li>
-                                <li><a href="portfolio.html">Portfolio</a></li>
-                                <li><a href="social-icon.html">Social Icon</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact-us.html">contact us</a></li>
-                        <li class="border-none"><a href="error404.html">404</a></li>
-                        <li class="input-group border-none my-3 mx-2">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                                    class="fas fa-search"></i></button>
-                        </li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{{ route('doctors.index') }}">Doctors</a></li>
+                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
                         <li class="border-none">
                             <ul class="social-icon">
-                                <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
+                                <li><a href="{{ App\Helpers\SettingHelper::getSetting('facebook') }}"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ App\Helpers\SettingHelper::getSetting('twitter') }}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="{{ App\Helpers\SettingHelper::getSetting('instagram') }}"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -349,7 +212,7 @@
                 <div class="col-lg-8 col-md-6 col-sm-12 col-12">
                     <div class="sb-footer-section">
                         <div class="footer-logo">
-                            <img src="{{asset('images/logo.png')}}" alt="img" width="200">
+                            <img src="{{ asset('images/logo.png') }}" alt="img" width="200">
                         </div>
                         <ul>
                             <li><a href="javascript:;"><i class="fas fa-map-marker-alt"></i>ADDRESS
@@ -361,7 +224,7 @@
                             <li><a href="javascript:;"><i class="fas fa-envelope"></i>PHONE<br>
                                     {{ App\Helpers\SettingHelper::getSetting('email') }}</a>
                             </li>
-                        
+
                             <li>
                                 <ul class="footer-media">
                                     <li><a href="{{ App\Helpers\SettingHelper::getSetting('facebook') }}"><i
@@ -379,7 +242,8 @@
                     <div class="links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="{{ route('doctors.index') }}"><i class="fas fa-angle-right"></i>Doctor</a></li>
+                            <li><a href="{{ route('doctors.index') }}"><i class="fas fa-angle-right"></i>Doctor</a>
+                            </li>
                             <li><a href="{{ route('blog.index') }}"><i class="fas fa-angle-right"></i>Blog</a></li>
                         </ul>
                     </div>
@@ -390,7 +254,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                        <p>© Copyright 2022 - 23 Design by {{env('APP_NAME')}} | All Rights
+                        <p>© Copyright 2022 - 23 Design by {{ env('APP_NAME') }} | All Rights
                             Reserved.</p>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 col-12">
