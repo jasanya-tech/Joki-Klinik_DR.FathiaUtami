@@ -6,76 +6,103 @@
     <title>Booking Confirmation - {{ $booking->code }}</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #f4f4f4 100%);
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 0;
+            color: #222;
         }
         .container {
-            max-width: 600px; /* Smaller container */
-            margin: 20px auto;
+            max-width: 480px;
+            margin: 40px auto;
             background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center; /* Center content */
+            padding: 36px 32px 32px 32px;
+            border-radius: 14px;
+            box-shadow: 0 6px 32px rgba(0, 86, 179, 0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 18px;
         }
         h2 {
-            color: #0056b3;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-            display: inline-block; /* To make border-bottom only as wide as text */
+            color: #007bff;
+            margin-bottom: 18px;
+            font-size: 1.7em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #00b894 0%, #007bff 100%);
+            margin: 0 auto 28px auto;
+            border-radius: 2px;
         }
         .patient-info {
-            text-align: left; /* Align patient details left */
-            margin-bottom: 30px;
-            padding: 15px 0;
-            border-bottom: 1px dashed #eee;
+            text-align: left;
+            margin-bottom: 28px;
+            padding: 18px 20px 18px 20px;
+            border-radius: 8px;
+            background: #f8fafc;
+            border: 1px solid #e3e8ee;
         }
         .patient-info p {
-            margin-bottom: 8px;
-            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-size: 1.08em;
         }
         .patient-info strong {
             display: inline-block;
-            width: 120px; /* Align labels */
-            color: #555;
+            width: 120px;
+            color: #007bff;
+            font-weight: 600;
+        }
+        .queue-highlight {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #00b894;
         }
         .qr-code-section {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px dashed #eee;
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px dashed #d1e7fd;
+        }
+        .qr-code-section p {
+            margin-bottom: 12px;
+            color: #555;
         }
         .qr-code-section img {
-            max-width: 250px; /* Slightly larger QR code */
+            max-width: 180px;
             height: auto;
-            border: 1px solid #ddd;
-            padding: 8px;
-            background-color: #fff;
-            margin-top: 15px;
+            border: 1.5px solid #e3e8ee;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin-top: 8px;
         }
         .text-muted {
-            color: #666;
-            font-size: 0.9em;
-            margin-top: 25px;
-            display: block; /* Ensures it starts on a new line */
+            color: #888;
+            font-size: 0.97em;
+            margin-top: 30px;
+            display: block;
+            letter-spacing: 0.2px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <img src="{{ public_path('images/logo.png') }}" alt="Klinik logo" width="140">
+        </div>
         <h2>Konfirmasi Booking</h2>
+        <div class="divider"></div>
 
         <div class="patient-info">
-            <p><strong>Nama:</strong> <span>{{ $booking->user->name }}</span></p>
-            <p><strong>Email:</strong> <span>{{ $booking->user->email }}</span></p>
-            <p><strong>Telepon:</strong> <span>{{ $booking->user->phone_number ?? '-' }}</span></p>
-            <p><strong>Kode Booking:</strong> <span>{{ $booking->code }}</span></p>
-            <p><strong>Antrian ke-</strong> <span style="font-size: 1.3em; font-weight: bold; color: #007bff;">{{ $booking->queue_number }}</span></p>
-            <p><strong>Estimasi Waktu:</strong> <span>{{ \Carbon\Carbon::parse($booking->estimated_time)->format('H:i') }} WIB</span></p>
+            <p><strong>Nama</strong> <span>{{ $booking->user->name }}</span></p>
+            <p><strong>Email</strong> <span>{{ $booking->user->email }}</span></p>
+            <p><strong>Telepon</strong> <span>{{ $booking->user->phone_number ?? '-' }}</span></p>
+            <p><strong>Kode Booking</strong> <span>{{ $booking->code }}</span></p>
+            <p><strong>Antrian ke-</strong> <span class="queue-highlight">{{ $booking->queue_number }}</span></p>
+            <p><strong>Estimasi Waktu</strong> <span>{{ \Carbon\Carbon::parse($booking->estimated_time)->format('H:i') }} WIB</span></p>
         </div>
 
         @if ($qrImageBase64)
@@ -85,7 +112,7 @@
         </div>
         @endif
 
-        <span class="text-muted">Terima kasih telah melakukan booking melalui layanan kami.</span>
+        <span class="text-muted">Terima kasih telah melakukan booking melalui layanan kami.<br>Harap datang tepat waktu sesuai estimasi.</span>
     </div>
 </body>
 </html>
