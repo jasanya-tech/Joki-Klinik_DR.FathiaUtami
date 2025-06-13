@@ -162,7 +162,7 @@
                         <div class=" col-md-6 col-sm-6 col-6">
                             <div class="mobile-logo">
                                 <a href="javascript:;">
-                                    <img src="images/logo3.png" alt="img">
+                                    <img src="{{ asset('images/logo.png') }}" width="200" alt="img">
                                 </a>
                             </div>
                         </div>
