@@ -380,7 +380,7 @@
                         <h4>Useful Links</h4>
                         <ul>
                             <li><a href="{{ route('doctors.index') }}"><i class="fas fa-angle-right"></i>Doctor</a></li>
-                            <li><a href="{{ route('blog.indec') }}"><i class="fas fa-angle-right"></i>Blog</a></li>
+                            <li><a href="{{ route('blog.index') }}"><i class="fas fa-angle-right"></i>Blog</a></li>
                         </ul>
                     </div>
                 </div>
