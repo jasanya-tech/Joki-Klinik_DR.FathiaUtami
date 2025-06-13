@@ -379,12 +379,8 @@
                     <div class="links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="about-us.html"><i class="fas fa-angle-right"></i>About Us</a></li>
-                            <li><a href="service.html"><i class="fas fa-angle-right"></i>Service</a></li>
-                            <li><a href="gallery.html"><i class="fas fa-angle-right"></i>Gallery</a></li>
-                            <li><a href="blog-single.html"><i class="fas fa-angle-right"></i>Blog</a></li>
-                            <li><a href="appoinment.html"><i class="fas fa-angle-right"></i>Appoinments</a></li>
-                            <li><a href="contact-us.html"><i class="fas fa-angle-right"></i>Contact Us</a></li>
+                            <li><a href="{{ route('doctors.index') }}"><i class="fas fa-angle-right"></i>Doctor</a></li>
+                            <li><a href="{{ route('blog.indec') }}"><i class="fas fa-angle-right"></i>Blog</a></li>
                         </ul>
                     </div>
                 </div>
@@ -487,3 +483,4 @@
 </body>
 
 </html>
+˜
