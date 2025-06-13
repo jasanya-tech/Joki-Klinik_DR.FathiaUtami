@@ -14,14 +14,13 @@
                         </p>
                      </div>
                      <div class="blog-content">
-                        <h3 class="p-0"><a href="blog-left-sidebar.html">Spending More and Getting Less
-                              for Health Care</a>
+                        <h3 class="p-0"><a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title}}</a>
                         </h3>
                         <ul>
                            <li><a href="javascript:;"><i class="far fa-user"></i> by {{$blog->author}}</a>
                            </li>
                         </ul>
-                        {{$blog->body}}
+                        {!!$blog->body!!}
                        
                   
                         <div class="tag-with-media">

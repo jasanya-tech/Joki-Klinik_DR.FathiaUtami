@@ -345,7 +345,7 @@
                      </p>
                   </div>
                   <div class="blog-content">
-                     <h3><a href="blog-single.html">{{ $blog->title }}</a>
+                     <h3><a href="{{ route('blog.show', $blog->slug)}}">{{ $blog->title }}</a>
                      </h3>
                      <ul>
                         <li><a href="{{ route('blog.show', $blog->slug) }}"><i class="far fa-user"></i> {{ $blog->author }}</a>

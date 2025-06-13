@@ -12,7 +12,7 @@
                         <nav aria-label="breadcrumb">
                             <h4>Blog</h4>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
                                 <li class="breadcrumb-item " aria-current="page">Blog</li>
                             </ol>
                         </nav>
@@ -56,7 +56,7 @@
                                                 alt="img">
                                         </div>
                                         <div class="post-container">
-                                            <a href="blog-single.html" class="h6">{{ $recentBlog->title }}</a>
+                                            <a href="{{ route('blog.show', $recentBlog->slug) }}" class="h6">{{ $recentBlog->title }}</a>
                                             <p>{{ Carbon\Carbon::parse($recentBlog->created_at)->format('d M Y') }}</p>
                                         </div>
                                     </div>
