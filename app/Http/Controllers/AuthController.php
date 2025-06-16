@@ -127,7 +127,7 @@ class AuthController extends Controller
         $request->validate([
             'current_password' => 'required',
             'password' => 'required',
-            'password_confirmation' => 'required|same:new_password',
+            'password_confirmation' => 'required|same:password',
         ]);
 
 
