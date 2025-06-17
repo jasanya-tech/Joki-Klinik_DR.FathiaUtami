@@ -4,8 +4,11 @@
     <!-- header end -->
     <!-- contact us page start -->
     <!-- breadcrumb  start-->
-    <div class="contact-main-wrapper">
-        <div class="container">
+    <div class="contact-main-wrapper position-relative overflow-hidden" style="min-width: 100%; min-height: 400px;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" 
+            style="background-image: url('{{ App\Helpers\BannerHelper::getBannerImageUrl('blog') }}'); background-size: cover; background-position: center; z-index: 1;">
+        </div>
+        <div class="container position-relative" style="z-index: 2;">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="sb-contact-section">
@@ -13,7 +16,7 @@
                             <h4>Blog</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item " aria-current="page">Blog</li>
+                                <li class="breadcrumb-item" aria-current="page">Blog</li>
                             </ol>
                         </nav>
                     </div>
