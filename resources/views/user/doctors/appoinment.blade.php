@@ -14,18 +14,26 @@
         }
     </style>
 
-    <div class="contact-main-wrapper">
-        <div class="container">
+    <div class="contact-main-wrapper position-relative" style="z-index: 1;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" 
+            style="
+                background-image: url('{{ App\Helpers\BannerHelper::getBannerImageUrl('booking') }}');
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+                z-index: 0;
+            ">
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="sb-contact-section">
-                        <nav aria-label="breadcrumb">
-                            <h4>Book an Appointment</h4>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Book an Appointment</li>
-                            </ol>
-                        </nav>
+                <div class="col-12">
+                    <div class="sb-contact-section text-white py-5">
+                        <h4>Book an Appointment</h4>
+                        <ol class="breadcrumb bg-transparent">
+                            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Book an Appointment</li>
+                        </ol>
                     </div>
                 </div>
             </div>
