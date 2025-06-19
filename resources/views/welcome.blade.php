@@ -59,7 +59,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center">
                <div class="sb-about-section">
-                  <div class="icon mx-auto" style="display: flex; justify-content:
+                  <div class="icon mx-auto" style="display: flex; justify-content: center;">
                      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <defs>
                            <style>
