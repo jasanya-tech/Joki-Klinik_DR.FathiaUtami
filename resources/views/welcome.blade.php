@@ -84,34 +84,8 @@
    </div>
    <!-- About us section end -->
    <!-- emergency section start -->
-   <div class="emergency-main-wrapper" style="background-image: url('{{ App\Helpers\BannerHelper::getBannerImageUrl('emergency') }}');">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-               <div class="sb-emergency-main-wrapper ">
-                  <div class="content">
-                     <span><i class="fas fa-headphones-alt"></i></span>
-                     <h4>Emergency <br> Medical Care 24/7</h4>
-                  </div>
-                  <h5>With access to 24 hour emergency assistance, It’s so
-                     important you can continue to help others.
-                  </h5>
-                  <p>It is a long established fact that a reader will be distract-
-                     ed by the readable content of a page when looking at its
-                     layout. The point of using Lorem Ipsum is that it has a
-                     more-or-less normal distribution.
-                  </p>
-                  <p>It is a long established fact that a reader will be distract-
-                     ed by the readable content of a page.
-                  </p>
-                  <div class="content">
-                     <span class="rotate"><i class="fas fa-phone-volume"></i></span>
-                     <h4>{{App\Helpers\SettingHelper::getSetting('phone')}}</h4>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+   <div class="image-wrapper float_left">
+      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider_top') }}" alt="divider_top" class="img-fluid">
    </div>
    <!-- emergency section end -->
    <!-- our team section start -->
@@ -148,7 +122,7 @@
    </div>
    <!-- images section -->
    <div class="image-wrapper float_left">
-      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider') }}" alt="divider" class="img-fluid">
+      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider_buttom') }}" alt="divider_buttom" class="img-fluid">
    </div>
    <!-- our team section end -->
    <!-- testimonial section start -->
