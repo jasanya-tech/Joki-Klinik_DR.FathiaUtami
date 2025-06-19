@@ -52,8 +52,7 @@
                      </svg>
                   </div>
                   <div class="content">
-                     <h5>Mediacal Counseling</h5>
-                     <p>It is a long established fact that</p>
+                     <h5>Konseling Kesehatan</h5>
                   </div>
                </div>
             </div>
@@ -74,8 +73,7 @@
                      </svg>
                   </div>
                   <div class="content">
-                     <h5>Qualified Doctors</h5>
-                     <p>It is a long established fact that</p>
+                     <h5>Dokter yang Berkualifikasi</h5>
                   </div>
                </div>
             </div>
