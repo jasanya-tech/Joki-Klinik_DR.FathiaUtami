@@ -92,42 +92,17 @@
                     </div>
                 </div>
             </div>
-            <div class="mid-header-section d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                            <div class="sb_logo_wrapper">
-                                <a href="/">
-                                    <img src="{{ asset('images/logo.png') }}" alt="img" width="200">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                            <div class="sb-mid-right-section">
-                                <ul>
-                                    <li>
-                                        <a href="javascript:;"><i class="fas fa-map-marker-alt"></i></a>
-                                        <a
-                                            href="javascript:;">{{ App\Helpers\SettingHelper::getSetting('address') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"><i class="fas fa-phone"></i></a>
-                                        <a href="javascript:;">Call Us 24/7<br>
-                                            {{ App\Helpers\SettingHelper::getSetting('phone') }}</a>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="menu-items-wrapper d-xl-block d-lg-block d-md-none d-sm-none d-none ">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <nav class="navbar navbar-expand-lg">
                                 <ul class="navbar-nav">
+                                    <li>
+                                        <a class="navbar-brand" href="/">
+                                            <img src="{{ asset('images/logo.png') }}" width="100" alt="img">
+                                        </a>
+                                    </li>
                                     <li class="nav-item ps-rel">
                                         <a class="nav-link" href="/">Home
                                         </a>
@@ -212,7 +187,7 @@
                 <div class="col-lg-8 col-md-6 col-sm-12 col-12">
                     <div class="sb-footer-section">
                         <div class="footer-logo">
-                            <img src="{{ asset('images/logo.png') }}" alt="img" width="200">
+                            <img src="{{ asset('images/logoklinik (1).jpg') }}" alt="img" width="200">
                         </div>
                         <ul>
                             <li><a href="javascript:;"><i class="fas fa-map-marker-alt"></i>ADDRESS
