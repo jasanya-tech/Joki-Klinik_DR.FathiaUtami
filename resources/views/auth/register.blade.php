@@ -44,10 +44,11 @@
                 <div class="col-lg-6 col-md-12 col-12 p-0">
                     <div class="form-sidebar">
                         <div class="logo-section">
-                            <img src="images/logo3.png" alt="img">
+                            {{-- <img src="{{ asset(App\Helpers\BannerHelper::getBannerImageUrl('logo')) }}" alt="img"> --}}
+                            <img src="{{ asset('images/logoklinik (1).jpg') }}" alt="img"> 
                         </div>
                         <div class="form-image d-xl-block d-lg-block d-none">
-                            <img src="images/form-img.png" alt="img">
+                            <img src="{{ asset('images/form-img2.png') }}" alt="img">
                         </div>
                     </div>
                 </div>
