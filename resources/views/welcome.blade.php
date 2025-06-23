@@ -83,7 +83,7 @@
    <!-- About us section end -->
    <!-- emergency section start -->
    <div class="image-wrapper float_left">
-      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider_top') }}" alt="divider_top" class="img-fluid">
+      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('home2') }}" alt="home2" class="img-fluid">
    </div>
    <!-- emergency section end -->
    <!-- our team section start -->
@@ -94,9 +94,6 @@
                <div class="sb-team-section">
                   <h6 class="home1-section-heading1">Our Team</h6>
                   <h5 class="home1-section-heading2">Our Dedicated Doctors</h5>
-                  <p>It is a long established fact that a reader will be distracted by the readable
-                     <br>content of a page when looking at its layout.
-                  </p>
                </div>
             </div>
             @foreach ($doctors as $doctor)
@@ -117,10 +114,6 @@
             @endforeach
          </div>
       </div>
-   </div>
-   <!-- images section -->
-   <div class="image-wrapper float_left">
-      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider_buttom') }}" alt="divider_buttom" class="img-fluid">
    </div>
    <!-- our team section end -->
    <!-- testimonial section start -->
@@ -283,9 +276,6 @@
                <div class="sb-blog-main-section">
                   <h6 class="home1-section-heading1 "> Our Blog</h6>
                   <h5 class="home1-section-heading2">Our Latest News</h5>
-                  <p>It is a long established fact that a reader will be distracted by the readable
-                     <br>content of a page when looking at its layout.
-                  </p>
                </div>
             </div>
             @foreach ($recentBlogs as $blog)
