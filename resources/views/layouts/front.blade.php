@@ -62,16 +62,6 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-4 p-0">
                             <div class="sb-top-right-section">
                                 <ul>
-                                    <li>
-                                        <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
-                                            <li><a href="{{ App\Helpers\SettingHelper::getSetting('facebook') }}"><i
-                                                        class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="{{ App\Helpers\SettingHelper::getSetting('twitter') }}"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="{{ App\Helpers\SettingHelper::getSetting('instagram') }}"><i
-                                                        class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </li>
                                     <li class="login-btn">
                                         @auth
                                             <span>
