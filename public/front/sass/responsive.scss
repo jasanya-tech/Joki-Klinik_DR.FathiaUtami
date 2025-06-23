@@ -345,14 +345,14 @@ $transition: all 0.5s;
 	// 404 page css
 	.Error-page-main-wrapper {
 		background-image: none !important;
-		background-color: #ffd9db;
+		background-color: #d9ffee;
 		.resp-text {
 			h2 {
 				font-size: 150px;
 				text-align: center;
 				color: #ffeded;
 				font-weight: 700;
-				text-shadow: 6px 6px #e12454;
+				text-shadow: 6px 6px #0ABAB5;
 			}
 		}
 	}
@@ -366,7 +366,7 @@ $transition: all 0.5s;
 	.login-main-wrapper {
 		.form-sidebar {
 			height: auto;
-			background-color: #e12454;
+			background-color: #0ABAB5;
 			.logo-section {
 				padding: 30px;
 			}

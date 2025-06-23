@@ -9,9 +9,9 @@ $body-color: #333;
 $title-color: #222222;
 $section-bg-color:#ebf5f5;
 $title-color-white: #fff;
-$title-color-hover: #e12454;
-$bg-color-main: #e12454;
-$title-light-pink: #ffd9db;
+$title-color-hover: #0ABAB5;
+$bg-color-main: #0ABAB5;
+$title-light-pink: #d9ffee;
 $text-hover-color:#ffffff;
 $bg-color-white: #ffffff;
 $border-color:#aaa;
@@ -260,7 +260,7 @@ a.button-btn , button.button-btn{
 			transform: translateX(0);
 		}
 		span {
-			background-color: #e12454;
+			background-color: #0ABAB5;
 			color: $title-light-pink;
 		}
 		color:$title-color-white;

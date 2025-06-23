@@ -70,7 +70,7 @@
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         {{ $schedule->day }}
                                         <span
-                                            class="badge bg-danger rounded-pill">{{ \Carbon\Carbon::parse($schedule->start_time)->format('H:i') }}
+                                            class="badge bg-success rounded-pill">{{ \Carbon\Carbon::parse($schedule->start_time)->format('H:i') }}
                                             - {{ \Carbon\Carbon::parse($schedule->end_time)->format('H:i') }}</span>
                                     </li>
                                 @empty
