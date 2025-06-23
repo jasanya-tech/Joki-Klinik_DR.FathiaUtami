@@ -51,7 +51,8 @@
                 <div class="col-lg-6 col-md-12 col-12 p-0">
                     <div class="form-sidebar">
                         <div class="logo-section">
-                            <img src="{{ asset('images/logo3.png') }}" alt="img"> {{-- Corrected asset path --}}
+                            <img src="{{ asset(App\Helpers\BannerHelper::getBannerImageUrl('logo')) }}" alt="img">
+                            {{-- <img src="{{ asset('images/logo3.png') }}" alt="img"> Corrected asset path --}}
                         </div>
                         <div class="form-image d-xl-block d-lg-block d-none">
                             <img src="{{ asset('images/form-img.png') }}" alt="img"> {{-- Corrected asset path --}}
@@ -104,7 +105,6 @@
                                         {{ old('remember') ? 'checked' : '' }}>
                                     <label for="confirm">Remember me</label>
                                 </li>
-                                <li><a href="javascript:;">Forget Password?</a></li>
                             </ul>
 
                             <div class="d-flex align-items-baseline ">
