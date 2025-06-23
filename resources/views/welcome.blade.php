@@ -8,13 +8,19 @@
          <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                <div class="sb-banner-section ">
-                  <h4>We Are Here For You</h4>
-                  <h2 class="wow fadeIn" data-wow-duration="2s" data-wow-delay=".5ms">Professional and <br>
-                     Friendly <span>Health Care</span> <br>
-                     For You
+                  <h4></h4>
+                  <h2 class="wow fadeIn" data-wow-duration="2s" data-wow-delay=".5ms"><br>
+                     <span></span> <br>
+                     
                   </h2>
-                  <p> {{App\Helpers\SettingHelper::getSetting('home_banner_description') }}
-                  </p>
+                  {{-- <p> {{App\Helpers\SettingHelper::getSetting('home_banner_description') }}
+                  </p> --}}
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
                   <a href="{{ route('doctors.index') }}" class="button-btn mt-4">book now
                      <span><i class="fas fa-angle-double-right"></i></span>
                   </a>
@@ -27,10 +33,10 @@
    <!-- About section start-->
    <div class="about-main-wrapper float_left">
       <div class="container">
-         <div class="row plr-50">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-               <div class="sb-about-section ">
-                  <div class="icon">
+         <div class="row plr-50 justify-content-center text-center">
+            <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center">
+               <div class="sb-about-section">
+                  <div class="icon mx-auto" style="display: flex; justify-content: center;">
                      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <defs>
                            <style>
@@ -46,14 +52,13 @@
                      </svg>
                   </div>
                   <div class="content">
-                     <h5>Mediacal Counseling</h5>
-                     <p>It is a long established fact that</p>
+                     <h5>Konseling Kesehatan</h5>
                   </div>
                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center">
                <div class="sb-about-section">
-                  <div class="icon">
+                  <div class="icon mx-auto" style="display: flex; justify-content: center;">
                      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <defs>
                            <style>
@@ -68,32 +73,7 @@
                      </svg>
                   </div>
                   <div class="content">
-                     <h5>Qualified Doctors</h5>
-                     <p>It is a long established fact that</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-               <div class="sb-about-section">
-                  <div class="icon">
-                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <defs>
-                           <style>
-                              .cls-1 {
-                                 fill: #0ABAB5;
-                              }
-                           </style>
-                        </defs>
-                        <title>truck-outline</title>
-                        <path class="cls-1"
-                           d="M434.76,218.33A51.23,51.23,0,0,0,390,192H364.8a19.22,19.22,0,0,0-19.2,19.2v64a19.22,19.22,0,0,0,19.2,19.2h79.59a19.2,19.2,0,0,0,16.78-28.52ZM371.2,268.8V217.6H390a25.63,25.63,0,0,1,22.38,13.17l21.13,38Z" />
-                        <path class="cls-1"
-                           d="M502.33,260.88,464.68,193.1a76.83,76.83,0,0,0-67.13-39.5H332.8V140.8A76.88,76.88,0,0,0,256,64H76.8A76.88,76.88,0,0,0,0,140.8V320a76.92,76.92,0,0,0,65.13,75.91,64,64,0,0,0,125.58.89H346.89a64,64,0,0,0,126.65-10.29A76.81,76.81,0,0,0,512,320V298.18A77,77,0,0,0,502.33,260.88ZM128,422.4A38.4,38.4,0,1,1,166.4,384,38.44,38.44,0,0,1,128,422.4Zm179.2-51.2H190.71a64,64,0,0,0-125.14-1.26A51.28,51.28,0,0,1,25.6,320V140.8A51.26,51.26,0,0,1,76.8,89.6H256a51.26,51.26,0,0,1,51.2,51.2V371.2Zm102.4,51.2A38.4,38.4,0,1,1,448,384,38.44,38.44,0,0,1,409.6,422.4ZM486.4,320a51.09,51.09,0,0,1-17.94,38.88A64,64,0,0,0,346.89,371.2H332.8v-192h64.74a51.23,51.23,0,0,1,44.76,26.34l37.65,67.78a51.37,51.37,0,0,1,6.45,24.87Z" />
-                     </svg>
-                  </div>
-                  <div class="content">
-                     <h5>Emergency Services</h5>
-                     <p>It is a long established fact that</p>
+                     <h5>Dokter yang Berkualifikasi</h5>
                   </div>
                </div>
             </div>
@@ -102,34 +82,8 @@
    </div>
    <!-- About us section end -->
    <!-- emergency section start -->
-   <div class="emergency-main-wrapper" style="background-image: url('{{ App\Helpers\BannerHelper::getBannerImageUrl('emergency') }}');">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-               <div class="sb-emergency-main-wrapper bg-success">
-                  <div class="content">
-                     <span><i class="fas fa-headphones-alt"></i></span>
-                     <h4>Emergency <br> Medical Care 24/7</h4>
-                  </div>
-                  <h5>With access to 24 hour emergency assistance, It’s so
-                     important you can continue to help others.
-                  </h5>
-                  <p>It is a long established fact that a reader will be distract-
-                     ed by the readable content of a page when looking at its
-                     layout. The point of using Lorem Ipsum is that it has a
-                     more-or-less normal distribution.
-                  </p>
-                  <p>It is a long established fact that a reader will be distract-
-                     ed by the readable content of a page.
-                  </p>
-                  <div class="content">
-                     <span class="rotate"><i class="fas fa-phone-volume"></i></span>
-                     <h4>{{App\Helpers\SettingHelper::getSetting('phone')}}</h4>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+   <div class="image-wrapper float_left">
+      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider_top') }}" alt="divider_top" class="img-fluid">
    </div>
    <!-- emergency section end -->
    <!-- our team section start -->
@@ -166,7 +120,7 @@
    </div>
    <!-- images section -->
    <div class="image-wrapper float_left">
-      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider') }}" alt="divider" class="img-fluid">
+      <img src="{{ App\Helpers\BannerHelper::getBannerImageUrl('divider_buttom') }}" alt="divider_buttom" class="img-fluid">
    </div>
    <!-- our team section end -->
    <!-- testimonial section start -->

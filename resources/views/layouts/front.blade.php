@@ -221,7 +221,7 @@
                             <li><a href="javascript:;"><i class="fas fa-phone"></i>PHONE<br>
                                     {{ App\Helpers\SettingHelper::getSetting('phone') }}</a>
                             </li>
-                            <li><a href="javascript:;"><i class="fas fa-envelope"></i>PHONE<br>
+                            <li><a href="javascript:;"><i class="fas fa-envelope"></i>EMAIL<br>
                                     {{ App\Helpers\SettingHelper::getSetting('email') }}</a>
                             </li>
 
