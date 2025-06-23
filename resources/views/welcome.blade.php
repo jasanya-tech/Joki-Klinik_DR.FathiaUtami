@@ -35,7 +35,7 @@
                         <defs>
                            <style>
                               .cls-1 {
-                                 fill: #e12454;
+                                 fill: #0ABAB5;
                                  width: 45px;
                               }
                            </style>
@@ -58,7 +58,7 @@
                         <defs>
                            <style>
                               .cls-1 {
-                                 fill: #e12454;
+                                 fill: #0ABAB5;
                               }
                            </style>
                         </defs>
@@ -80,7 +80,7 @@
                         <defs>
                            <style>
                               .cls-1 {
-                                 fill: #e12454;
+                                 fill: #0ABAB5;
                               }
                            </style>
                         </defs>
@@ -106,7 +106,7 @@
       <div class="container">
          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-               <div class="sb-emergency-main-wrapper ">
+               <div class="sb-emergency-main-wrapper bg-success">
                   <div class="content">
                      <span><i class="fas fa-headphones-alt"></i></span>
                      <h4>Emergency <br> Medical Care 24/7</h4>

@@ -141,7 +141,7 @@
                                     {{-- Page Numbers --}}
                                     @for ($i = 1; $i <= $lastPage; $i++)
                                         <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
-                                            <a class="page-link {{ $currentPage == $i ? 'bg-danger  text-white' : '' }}"
+                                            <a class="page-link {{ $currentPage == $i ? 'bg-success  text-white' : '' }}"
                                                 aria-disabled="{{ $currentPage == $i ? 'true' : 'false' }}"
                                                 href="{{ $blogs->url($i) }}">{{ $i }}</a>
                                         </li>

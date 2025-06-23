@@ -48,7 +48,7 @@ ul {
 }
 
 .accordion1-main-wrapper .accordion-button:not(.collapsed) {
-  color: #e12454;
+  color: #0ABAB5;
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -64,7 +64,7 @@ ul {
 .accordion1-main-wrapper .accordion-item .accordion-body {
   margin: 1rem 1.25rem;
   padding: 0 35px;
-  border-left: 2px solid #e12454;
+  border-left: 2px solid #0ABAB5;
 }
 
 /*============================ second accordion ==============================*/
@@ -87,7 +87,7 @@ ul {
 }
 
 .accordion2-wrapper .accordion-button:not(.collapsed) {
-  color: #e12454;
+  color: #0ABAB5;
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -144,7 +144,7 @@ ul {
 }
 
 .accordion3-wrapper .accordion-button:not(.collapsed) {
-  color: #e12454;
+  color: #0ABAB5;
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -185,7 +185,7 @@ ul {
 }
 
 .accordion4-wrapper .accordion-button:not(.collapsed) {
-  color: #e12454;
+  color: #0ABAB5;
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -229,7 +229,7 @@ ul {
 }
 
 .accordion4-wrapper .accordion-item .accordion-header button:not(.collapsed):after {
-  background: #e12454;
+  background: #0ABAB5;
 }
 
 .accordion4-wrapper .accordion-item .accordion-header button:not(.collapsed):before {
@@ -241,7 +241,7 @@ ul {
 
 /*============================ Five accordion ==============================*/
 .accordion5-wrapper {
-  background-color: #e12454;
+  background-color: #0ABAB5;
 }
 
 .accordion5-wrapper .accor-heading h3 {
@@ -330,8 +330,8 @@ ul {
   display: inline-block;
   width: auto;
   text-transform: uppercase;
-  border: 2px solid #e12454;
-  background-color: #e12454;
+  border: 2px solid #0ABAB5;
+  background-color: #0ABAB5;
   color: #ffffff;
   margin: 0 6px;
   font-weight: 600;
@@ -341,7 +341,7 @@ ul {
 
 .button1-wrapper .btn1:hover {
   background-color: #ffffff;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .button1-wrapper .btn1.xl-btn {
@@ -414,8 +414,8 @@ ul {
   display: inline-block;
   width: auto;
   text-transform: uppercase;
-  border: 2px solid #e12454;
-  background-color: #e12454;
+  border: 2px solid #0ABAB5;
+  background-color: #0ABAB5;
   color: #ffffff;
   margin: 0 6px;
   font-weight: 600;
@@ -429,7 +429,7 @@ ul {
 
 .button3-wrapper .btn3:hover {
   background-color: transparent;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .button3-wrapper .btn3.gray-btn {
@@ -477,7 +477,7 @@ ul {
   display: inline-block;
   width: auto;
   text-transform: uppercase;
-  border: 2px solid #e12454;
+  border: 2px solid #0ABAB5;
   background-color: transparent;
   color: #111111;
   margin: 0 6px;
@@ -491,7 +491,7 @@ ul {
 }
 
 .button4-wrapper .btn4:hover {
-  background-color: #e12454;
+  background-color: #0ABAB5;
   color: #ffffff;
 }
 
@@ -610,7 +610,7 @@ ul {
   color: #ffffff;
   margin: 0 6px;
   font-weight: 600;
-  border: 2px solid #e12454;
+  border: 2px solid #0ABAB5;
   font-size: 14px;
   padding: 12px 32px;
   text-decoration: none;
@@ -632,16 +632,16 @@ ul {
 }
 
 .button6-wrapper .btn6.blog1 {
-  background-color: #e12454;
+  background-color: #0ABAB5;
 }
 
 .button6-wrapper .btn6.blog1:hover {
   background-color: transparent;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .button6-wrapper .btn6.blog1:hover span {
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .button6-wrapper .btn6.checkout {
@@ -718,7 +718,7 @@ ul {
 }
 
 .button8-wrapper .btn8:hover {
-  border-color: #e12454;
+  border-color: #0ABAB5;
 }
 
 .button8-wrapper .btn8:after {
@@ -726,7 +726,7 @@ ul {
 }
 
 .button8-wrapper .btn8:after, .button8-wrapper .btn8:before {
-  background: #e12454;
+  background: #0ABAB5;
   content: '';
   position: absolute;
   z-index: -1;
@@ -871,7 +871,7 @@ ul {
   z-index: -1;
   border-radius: 50px;
   transition-duration: .3s;
-  background-color: #e12454;
+  background-color: #0ABAB5;
 }
 
 .button9-wrapper .expan-rouded-btn:hover {
@@ -1207,7 +1207,7 @@ ul {
 }
 
 .tab-one-wrapper .tab-content .tab-one-home .tab-one-content h4 {
-  color: #e12454;
+  color: #0ABAB5;
   text-transform: uppercase;
   font-size: 20px;
 }
@@ -1266,11 +1266,11 @@ ul {
 
 .tab-two-wrapper .nav-pills .nav-item .nav-link.active {
   background-color: transparent;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .tab-two-wrapper .nav-pills .nav-item .nav-link:hover {
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .tab-two-wrapper .nav-pills .nav-item .nav-link:hover i {
@@ -1655,7 +1655,7 @@ ul {
   margin: 0px auto;
   height: 80px;
   width: 80px;
-  background-color: #e12454;
+  background-color: #0ABAB5;
   border-radius: 50%;
   font-size: 24px;
   line-height: 80px;
@@ -1704,7 +1704,7 @@ ul {
 }
 
 .counter-three-wrapper .counter-three .our-progress .chart-three .count-plus {
-  color: #e12454;
+  color: #0ABAB5;
   font-size: 25px;
   font-weight: 700;
   margin-left: 5px;
@@ -1728,7 +1728,7 @@ ul {
 
 .counter-four-wrapper .counter-four .our-progress-one {
   margin-top: 20px;
-  background-color: #e12454;
+  background-color: #0ABAB5;
   border-radius: 5px;
 }
 
@@ -2046,7 +2046,7 @@ ul {
 
 .pricing-two-wrapper .pricing-two .pricing-table-two .pricing-body .price-icon i {
   font-size: 35px;
-  color: #e12454;
+  color: #0ABAB5;
   margin-bottom: 20px;
 }
 
@@ -2482,14 +2482,14 @@ ul {
 }
 
 .testimonial-four-wrapper .forth-slider .owl-carousel button.owl-dot span:hover {
-  background: #e12454;
+  background: #0ABAB5;
   width: 12px;
   height: 12px;
   transition: all 0.5s;
 }
 
 .testimonial-four-wrapper .forth-slider .owl-carousel button.owl-dot.active span {
-  background: #e12454;
+  background: #0ABAB5;
   width: 12px;
   height: 12px;
   transition: all 0.5s;
@@ -2509,7 +2509,7 @@ ul {
 }
 
 .testimonial-five-wrapper .testimonial-five .owl-carousel .item .test-five-wrapper .test-five-icon i {
-  color: #e12454;
+  color: #0ABAB5;
   font-size: 40px;
 }
 
@@ -2524,7 +2524,7 @@ ul {
 .testimonial-five-wrapper .testimonial-five .owl-carousel .item .test-five-wrapper h6 {
   margin: 10px 0;
   font-size: 20px;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .testimonial-five-wrapper .testimonial-five .owl-carousel .owl-nav {
@@ -3064,8 +3064,8 @@ ul {
 }
 
 .team-one-wrapper .team-slider-wrapper .owl-carousel .item .slider-content .image-wrapper .image-wrapper-overlay .content-wrapper .social-icon li a:hover {
-  border: 1px solid #e12454;
-  background: #e12454;
+  border: 1px solid #0ABAB5;
+  background: #0ABAB5;
   transition: all .5s;
 }
 
@@ -3133,7 +3133,7 @@ ul {
 }
 
 .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots .owl-dot:hover span, .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots .owl-dot.active span {
-  background: #e12454;
+  background: #0ABAB5;
   width: 8px;
   height: 8px;
   transition: all 0.5s;
@@ -3373,7 +3373,7 @@ ul {
 }
 
 .team-four-wrapper .owl-theme .owl-dots .owl-dot:hover span, .team-four-wrapper .owl-theme .owl-dots .owl-dot.active span {
-  background: #e12454;
+  background: #0ABAB5;
   width: 8px;
   height: 8px;
   transition: all 0.5s;
@@ -4093,12 +4093,12 @@ ul {
 .gallery2-wrapper .portfolio_img_text a {
   padding: 10px;
   font-size: 12px;
-  border: 1px solid #e12454;
-  color: #e12454;
+  border: 1px solid #0ABAB5;
+  color: #0ABAB5;
 }
 
 .gallery2-wrapper .portfolio_img_text a:hover {
-  background: #e12454;
+  background: #0ABAB5;
   color: #fff;
 }
 
@@ -4205,7 +4205,7 @@ ul {
 }
 
 .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot.active span, .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot:hover span {
-  background: #e12454;
+  background: #0ABAB5;
   width: 10px;
   height: 10px;
   transition: all 0.5s;
@@ -4242,7 +4242,7 @@ ul {
 }
 
 .gallery3-wrapper .portfolio_image_wrapper:hover .portfolio_image_overlay {
-  background-color: #e12454;
+  background-color: #0ABAB5;
   opacity: 0.9;
   top: 0;
   left: 0;
@@ -4304,8 +4304,8 @@ ul {
 .gallery4-wrapper .section6_nav_tabs .nav > li > a:focus,
 .gallery4-wrapper .section6_nav_tabs .nav > li > a:hover {
   text-decoration: none;
-  color: #e12454;
-  border: 1px solid #e12454;
+  color: #0ABAB5;
+  border: 1px solid #0ABAB5;
   border-radius: 35px;
   background: #fff;
 }
@@ -4313,8 +4313,8 @@ ul {
 .gallery4-wrapper .section6_nav_tabs .nav-pills > li a.active,
 .gallery4-wrapper .section6_nav_tabs .nav-pills > li a.active > :focus,
 .gallery4-wrapper .section6_nav_tabs .nav-pills > li a.active > :hover {
-  color: #e12454;
-  border: 1px solid #e12454;
+  color: #0ABAB5;
+  border: 1px solid #0ABAB5;
   border-radius: 35px;
   background: #fff;
 }
@@ -4352,12 +4352,12 @@ ul {
 }
 
 .gallery4-wrapper .project_likes a i {
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .gallery4-wrapper .tab_image_wrapper:hover .tab_image_text {
-  border: 1px solid #e12454;
-  background: #e12454;
+  border: 1px solid #0ABAB5;
+  background: #0ABAB5;
   border-top: none;
   transition: all 0.5s;
 }
@@ -4499,7 +4499,7 @@ ul {
   height: 75px;
   line-height: 75px;
   background-color: #fafafa;
-  color: #e12454;
+  color: #0ABAB5;
   text-transform: capitalize;
 }
 
@@ -4507,14 +4507,14 @@ ul {
   width: 230px;
   height: 40px;
   border-radius: 30px;
-  color: #e12454;
-  border: 1px solid #e12454;
+  color: #0ABAB5;
+  border: 1px solid #0ABAB5;
   background: #fff;
   transition: all 0.7s;
 }
 
 .pt-section-1 .p-box-1:hover .btn-1 {
-  background-color: #e12454;
+  background-color: #0ABAB5;
   color: #fff;
 }
 
@@ -4545,7 +4545,7 @@ ul {
 }
 
 .pt-section-1 .p-box-1.box-border:hover:before, .pt-section-1 .p-box-1.box-border:hover:after {
-  border-color: #e12454;
+  border-color: #0ABAB5;
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
   height: 100%;
@@ -4617,7 +4617,7 @@ ul {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #e12454;
+  color: #0ABAB5;
   border: 1px solid #285595;
   background: #fff;
   margin-top: 30px;
@@ -4628,7 +4628,7 @@ ul {
   content: '';
   position: absolute;
   color: #fff;
-  background: #e12454;
+  background: #0ABAB5;
   z-index: -1;
   bottom: 0;
   right: 0;
@@ -4723,7 +4723,7 @@ ul {
 }
 
 .pt-section-3 .p-box-3:hover .deal span {
-  color: #e12454 !important;
+  color: #0ABAB5 !important;
 }
 
 .pt-section-3 .p-box-3 .btn-5 {
@@ -4736,7 +4736,7 @@ ul {
 }
 
 .pt-section-3 .p-box-3 .btn-5:hover {
-  background: #e12454;
+  background: #0ABAB5;
 }
 
 .pt-section-4 {
@@ -4897,7 +4897,7 @@ ul {
   text-align: center;
   transition: all 0.7s;
   color: #fff;
-  background-color: #e12454;
+  background-color: #0ABAB5;
 }
 
 .ic-section-1 .box {
@@ -4924,7 +4924,7 @@ ul {
 }
 
 .ic-section-1 .box h4 a {
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .ic-section-1 .box-border {
@@ -4954,7 +4954,7 @@ ul {
 }
 
 .ic-section-1 .box-border:hover:after, .ic-section-1 .box-border:hover:after {
-  border-color: #e12454;
+  border-color: #0ABAB5;
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
   height: 100%;
@@ -4986,7 +4986,7 @@ ul {
   content: '';
   position: absolute;
   color: #fff;
-  background: #e12454;
+  background: #0ABAB5;
   z-index: -1;
   transition: 0.5s width ease-in-out, 0.5s height ease-in-out;
   bottom: 0;
@@ -5002,9 +5002,9 @@ ul {
 
 .ic-section-2 .icon-box-two span i {
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid,#0ABAB5;
   border-radius: 40px;
-  background-color: #e12454;
+  background-color: #0ABAB5;
   color: #fff;
   width: 70px;
   height: 70px;
@@ -5026,7 +5026,7 @@ ul {
 }
 
 .ic-section-2 .icon-box-two:hover {
-  border-color: #e12454;
+  border-color: #0ABAB5;
   box-shadow: 0px 0px 10px #797979;
 }
 
@@ -5041,7 +5041,7 @@ ul {
 
 .ic-section-2 .icon-box-two:hover span i {
   background-color: #ffffff;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .ic-section-2 .icon-box-two:hover h4 a {
@@ -5074,7 +5074,7 @@ ul {
   content: '';
   position: absolute;
   color: #fff;
-  background: #e12454;
+  background: #0ABAB5;
   z-index: -1;
   transition: 0.5s width ease-in-out, 0.5s height ease-in-out;
   top: 0;
@@ -5085,7 +5085,7 @@ ul {
 
 .ic-section-3 .icon-box-three span i {
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid,#0ABAB5;
   border-radius: 40px;
   background-color: #fff;
   color: #797979;
@@ -5126,7 +5126,7 @@ ul {
   content: '';
   position: absolute;
   color: #fff;
-  background: #e12454;
+  background: #0ABAB5;
   z-index: -1;
   transition: 0.7s width ease-in-out, 0.7s height ease-in-out;
   top: 0;
@@ -5140,10 +5140,10 @@ ul {
 }
 
 .ic-section-4 .icon-box-four span i {
-  background-color: #e12454;
+  background-color: #0ABAB5;
   color: #fff;
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid,#0ABAB5;
   border-radius: 40px;
   width: 70px;
   height: 70px;
@@ -5169,7 +5169,7 @@ ul {
 }
 
 .ic-section-4 .icon-box-four:hover {
-  background-color: #e12454;
+  background-color: #0ABAB5;
 }
 
 .ic-section-4 .icon-box-four:hover::before {
@@ -5179,7 +5179,7 @@ ul {
 
 .ic-section-4 .icon-box-four:hover span i {
   background-color: #ffffff;
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 .ic-section-4 .icon-box-four:hover p {
@@ -5225,9 +5225,9 @@ ul {
 
 .ic-section-5 .icon-box-five span i {
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid,#0ABAB5;
   border-radius: 40px;
-  background-color: #e12454;
+  background-color: #0ABAB5;
   color: #fff;
   width: 70px;
   height: 70px;
@@ -5259,11 +5259,11 @@ ul {
 }
 
 .ic-section-5 .icon-box-five:hover {
-  border-bottom-color: #e12454;
+  border-bottom-color: #0ABAB5;
 }
 
 .ic-section-5 .icon-box-five:hover::before, .ic-section-5 .icon-box-five:hover::after {
-  border-color: #e12454;
+  border-color: #0ABAB5;
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
   height: 100%;
@@ -5271,11 +5271,11 @@ ul {
 }
 
 .ic-section-5 .icon-box-five:hover span::after {
-  background-color: #e12454;
+  background-color: #0ABAB5;
 }
 
 .ic-section-5 .icon-box-five:hover h4 a {
-  color: #e12454;
+  color: #0ABAB5;
 }
 
 @media (max-width: 991px) {

@@ -43,7 +43,7 @@ ul{
             box-shadow: none;
         }
         &:not(.collapsed){
-            color: #e12454;
+            color: #0ABAB5;
             background-color: #ffffff;
             box-shadow:none;
         }
@@ -56,7 +56,7 @@ ul{
         .accordion-body{
             margin: 1rem 1.25rem;
             padding: 0 35px;
-            border-left: 2px solid #e12454;
+            border-left: 2px solid #0ABAB5;
         }
     }
 }
@@ -81,7 +81,7 @@ ul{
             box-shadow: none;
         }
         &:not(.collapsed){
-            color: #e12454;
+            color: #0ABAB5;
             background-color: #ffffff;
             box-shadow:none;
         }
@@ -141,7 +141,7 @@ ul{
             box-shadow: none;
         }
         &:not(.collapsed){
-            color: #e12454;
+            color: #0ABAB5;
             background-color: #ffffff;
             box-shadow:none;
         }
@@ -190,7 +190,7 @@ ul{
             box-shadow: none;
         }
         &:not(.collapsed){
-            color: #e12454;
+            color: #0ABAB5;
             background-color: #ffffff;
             box-shadow:none;
         }
@@ -229,7 +229,7 @@ ul{
                 }
                 &:not(.collapsed){
                     &:after{
-                       background: #e12454; 
+                       background: #0ABAB5; 
                     }
                   &:before{
                     content: '-';
@@ -249,7 +249,7 @@ ul{
 
 /*============================ Five accordion ==============================*/
 .accordion5-wrapper{
-    background-color: #e12454;
+    background-color: #0ABAB5;
     .accor-heading{
         h3{
            color: #ffffff;
@@ -340,8 +340,8 @@ ul{
         display: inline-block;
         width: auto;
         text-transform: uppercase;
-        border: 2px solid #e12454;
-        background-color: #e12454;
+        border: 2px solid #0ABAB5;
+        background-color: #0ABAB5;
         color: #ffffff;
         margin: 0 6px;
         font-weight: 600;
@@ -353,7 +353,7 @@ ul{
         transition: all 0.5s;
         &:hover{
             background-color: #ffffff;
-            color: #e12454;
+            color: #0ABAB5;
         }
          &.xl-btn{
             padding: 16px 40px;
@@ -416,8 +416,8 @@ ul{
         display: inline-block;
         width: auto;
         text-transform: uppercase;
-        border: 2px solid #e12454;
-        background-color: #e12454;
+        border: 2px solid #0ABAB5;
+        background-color: #0ABAB5;
         color: #ffffff;
         margin: 0 6px;
         font-weight: 600;
@@ -429,7 +429,7 @@ ul{
         -moz-transition: all 0.5s;
         &:hover{
             background-color: transparent;
-            color: #e12454;
+            color: #0ABAB5;
         }
         &.gray-btn{
             background-color: #333333;
@@ -473,7 +473,7 @@ ul{
         display: inline-block;
         width: auto;
         text-transform: uppercase;
-        border: 2px solid #e12454;
+        border: 2px solid #0ABAB5;
         background-color: transparent;
         color: #111111;
         margin: 0 6px;
@@ -485,7 +485,7 @@ ul{
         -ms-transition: all 0.5s;
         -moz-transition: all 0.5s;
         &:hover{
-            background-color:#e12454;
+            background-color:#0ABAB5;
             color: #ffffff;
         }
         &.light-border{
@@ -593,7 +593,7 @@ ul{
         color: #ffffff;
         margin: 0 6px;
         font-weight: 600;
-        border: 2px solid #e12454;
+        border: 2px solid #0ABAB5;
         font-size: 14px;
         padding: 12px 32px;
         text-decoration: none;
@@ -612,12 +612,12 @@ ul{
             -moz-transition: all 0.5s;
         }
         &.blog1{
-            background-color: #e12454;
+            background-color: #0ABAB5;
             &:hover{
                 background-color: transparent;
-                color: #e12454;
+                color: #0ABAB5;
                 span{
-                    color: #e12454;
+                    color: #0ABAB5;
                 }
             }
         }
@@ -692,7 +692,7 @@ ul{
         text-decoration: none;
         margin: 0 10px;
         &:hover{
-            border-color: #e12454;
+            border-color: #0ABAB5;
         }
         &:after{
             -webkit-transition: all 0.3s;
@@ -701,7 +701,7 @@ ul{
             transition: all 0.3s;
         }
         &:after, &:before{
-            background: #e12454;
+            background: #0ABAB5;
             content: '';
             position: absolute;
             z-index: -1;
@@ -861,7 +861,7 @@ ul{
             -ms-transition-duration: .3s;
             -o-transition-duration: .3s;
             transition-duration: .3s;
-            background-color: #e12454;
+            background-color: #0ABAB5;
         }
         &:hover{
             color: #ffffff;
@@ -1217,7 +1217,7 @@ ul{
             margin: 60px 0 0 0;
             .tab-one-content{
                 h4{
-                    color: #e12454;
+                    color: #0ABAB5;
                     text-transform: uppercase;  
                     font-size: 20px;                 
                 }
@@ -1284,7 +1284,7 @@ ul{
                 }
                 &.active{
                     background-color: transparent;
-                    color: #e12454;
+                    color: #0ABAB5;
                 }
                 &:hover{
                     i{
@@ -1294,7 +1294,7 @@ ul{
                         -o-transform: translateY(-5px);
                         transform: translateY(-5px);
                     }
-                    color: #e12454;
+                    color: #0ABAB5;
                 }
             }
         }
@@ -1407,12 +1407,12 @@ ul{
                 border-radius: 0px;
                 &:hover{
                     opacity: 1;
-                    border-bottom: 3px solid #e12454;
-                    color: #e12454;
+                    border-bottom: 3px solid #0ABAB5;
+                    color: #0ABAB5;
                 }
                 &.active{
-                    border-bottom: 3px solid #e12454;
-                    color: #e12454;
+                    border-bottom: 3px solid #0ABAB5;
+                    color: #0ABAB5;
                 }
             }
         }
@@ -1434,7 +1434,7 @@ ul{
                 .tab-icon{
                     i{
                         font-size: 30px;
-                        color: #e12454;
+                        color: #0ABAB5;
                     }
                 }
             }
@@ -1689,7 +1689,7 @@ ul{
         margin: 0px auto;
         height: 80px;
         width: 80px;
-        background-color: #e12454;
+        background-color: #0ABAB5;
         border-radius: 50%;
         font-size: 24px;
         line-height: 80px;
@@ -1734,7 +1734,7 @@ ul{
                     display: inline-block;
                 }
                 .count-plus{
-                    color: #e12454;
+                    color: #0ABAB5;
                     font-size: 25px;
                     font-weight: 700;
                     margin-left: 5px;
@@ -1760,7 +1760,7 @@ ul{
         text-align: center;
         .our-progress-one{
             margin-top: 20px;
-            background-color: #e12454;
+            background-color: #0ABAB5;
             border-radius: 5px;
             h2{
                 font-size: 18px;
@@ -2068,7 +2068,7 @@ ul{
                 .price-icon{
                     i{
                         font-size: 35px;
-                        color: #e12454;
+                        color: #0ABAB5;
                         margin-bottom: 20px;
                     }
                 }
@@ -2510,7 +2510,7 @@ ul{
                         -moz-transition: all 0.5s;
                         transition: all 0.5s;
                             &:hover{
-                            background: #e12454;
+                            background: #0ABAB5;
                             width: 12px;
                             height: 12px;
                             -webkit-transition: all 0.5s;
@@ -2522,7 +2522,7 @@ ul{
                     }
                     &.active{
                         span{
-                            background: #e12454;
+                            background: #0ABAB5;
                             width: 12px;
                             height: 12px;
                             -webkit-transition: all 0.5s;
@@ -2551,7 +2551,7 @@ ul{
                     .test-five-icon{
                         margin-bottom: 20px;
                         i{
-                            color: #e12454;
+                            color: #0ABAB5;
                             font-size: 40px;
                         }
                     }
@@ -2566,7 +2566,7 @@ ul{
                     h6{
                         margin: 10px 0;
                         font-size: 20px;
-                        color: #e12454;
+                        color: #0ABAB5;
                     }
                 }
             }
@@ -3076,8 +3076,8 @@ ul{
                                             -o-transition: all .5s;
                                             transition: all .5s;   
                                             &:hover{
-                                                border: 1px solid #e12454;
-                                                background: #e12454;
+                                                border: 1px solid #0ABAB5;
+                                                background: #0ABAB5;
                                                 -webkit-transition: all .5s;
                                                 -moz-transition: all .5s;
                                                 -ms-transition: all .5s;
@@ -3175,7 +3175,7 @@ ul{
                     }
                     &:hover, &.active{
                         span{
-                            background: #e12454;
+                            background: #0ABAB5;
                             width: 8px;
                             height: 8px;
                             -webkit-transition: all 0.5s;
@@ -3431,7 +3431,7 @@ ul{
                     }
                     &:hover, &.active{
                         span{
-                            background: #e12454;
+                            background: #0ABAB5;
                             width: 8px;
                             height: 8px;
                             -webkit-transition: all 0.5s;
@@ -4186,11 +4186,11 @@ ul{
     .portfolio_img_text a{
         padding: 10px;
         font-size: 12px;
-        border: 1px solid #e12454;
-        color: #e12454;
+        border: 1px solid #0ABAB5;
+        color: #0ABAB5;
     }
     .portfolio_img_text a:hover{
-        background:#e12454;
+        background:#0ABAB5;
         color: #fff;
     }
 }
@@ -4313,7 +4313,7 @@ ul{
         transition: all 0.5s;
     }
     .section4_portfolio_slider .owl-theme .owl-dots .owl-dot.active span, .section4_portfolio_slider .owl-theme .owl-dots .owl-dot:hover span  {
-        background:#e12454;
+        background:#0ABAB5;
         width:10px;
         height:10px;
         -webkit-transition: all 0.5s;
@@ -4356,7 +4356,7 @@ ul{
         transition: all 0.5s;
     }
     .portfolio_image_wrapper:hover .portfolio_image_overlay {
-      background-color:#e12454;
+      background-color:#0ABAB5;
       opacity:0.9;
       top:0;
       left:0;
@@ -4427,16 +4427,16 @@ ul{
 .section6_nav_tabs .nav>li>a:focus, 
 .section6_nav_tabs .nav>li>a:hover {
     text-decoration: none;
-	color: #e12454;
-	border:1px solid #e12454;
+	color: #0ABAB5;
+	border:1px solid #0ABAB5;
 	border-radius:35px;
 	background:#fff;
 }
 .section6_nav_tabs .nav-pills>li a.active, 
 .section6_nav_tabs .nav-pills>li a.active>:focus, 
 .section6_nav_tabs .nav-pills>li a.active>:hover {
-    color: #e12454;
-	border:1px solid #e12454;
+    color: #0ABAB5;
+	border:1px solid #0ABAB5;
 	border-radius:35px;
 	background:#fff;
 }
@@ -4466,12 +4466,12 @@ ul{
 	padding-bottom:20px;
 }
 .project_likes a i{
-	color:#e12454;
+	color:#0ABAB5;
 }
 
 .tab_image_wrapper:hover .tab_image_text {
-    border: 1px solid #e12454;
-	background:#e12454;
+    border: 1px solid #0ABAB5;
+	background:#0ABAB5;
 	border-top: none;
 	-webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -4630,15 +4630,15 @@ ul{
             height: 75px;
             line-height: 75px;
             background-color: #fafafa;
-            color: #e12454;
+            color: #0ABAB5;
             text-transform: capitalize;
         }
         .btn-1{
             width: 230px;
             height: 40px; 
             border-radius: 30px;
-            color: #e12454;
-            border: 1px solid #e12454;
+            color: #0ABAB5;
+            border: 1px solid #0ABAB5;
             background: #fff;
             -webkit-transition: all 0.7s;
             -o-transition: all 0.7s;
@@ -4649,7 +4649,7 @@ ul{
         }
         &:hover{
             .btn-1{
-                background-color: #e12454;
+                background-color: #0ABAB5;
                 color: #fff;
             }
         }
@@ -4676,7 +4676,7 @@ ul{
               }
               &:hover{
                   &:before, &:after{
-                    border-color: #e12454;
+                    border-color: #0ABAB5;
                     transition: border-color 0s, width 0.25s, height 0.25s;
                     width: 100%;
                     height: 100%;
@@ -4748,7 +4748,7 @@ ul{
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: bold;
-            color: #e12454;
+            color: #0ABAB5;
             border: 1px solid #285595;
             background: #fff;
             margin-top: 30px;
@@ -4762,7 +4762,7 @@ ul{
             content: '';
             position: absolute;
             color: #fff;
-            background: #e12454;
+            background: #0ABAB5;
             z-index: -1;
             bottom: 0;
             right: 0;
@@ -4860,7 +4860,7 @@ ul{
         &:hover{
             .deal{
                 span{
-                    color: #e12454 !important;
+                    color: #0ABAB5 !important;
                 }
             }
         }
@@ -4876,7 +4876,7 @@ ul{
             -moz-transition: all 0.7s;
             transition: all 0.7s;
             &:hover{
-                background: #e12454;
+                background: #0ABAB5;
             }
         }
     }
@@ -4938,7 +4938,7 @@ ul{
         }
         &:hover{
             .p-box-4-1{
-                background-color: #e12454;
+                background-color: #0ABAB5;
                 color: #fff;
                 h2{
                     color: #ffffff;
@@ -4948,7 +4948,7 @@ ul{
                 }
             }
             .btn-6{
-                background-color: #e12454;
+                background-color: #0ABAB5;
                 color: #fff;
             }
         }
@@ -5011,9 +5011,9 @@ ul{
             transition: all 0.7s;
         }
         &:hover{
-            background-color: #e12454;
+            background-color: #0ABAB5;
             .btn-5{
-                background-color: #e12454;
+                background-color: #0ABAB5;
             }
         }
     }
@@ -5041,7 +5041,7 @@ ul{
         text-align: center;
         transition: all 0.7s;
         color: #fff;
-        background-color: #e12454;
+        background-color: #0ABAB5;
     
     }
     .box {
@@ -5066,7 +5066,7 @@ ul{
             padding-top: 10px;
             font-size: 24px;
             a{
-                color: #e12454;
+                color: #0ABAB5;
             }
         }
     }
@@ -5094,7 +5094,7 @@ ul{
         }
         &:hover{
             &:after,&:after{
-                border-color: #e12454;
+                border-color: #0ABAB5;
                 transition: border-color 0s, width 0.25s, height 0.25s;
                 width: 100%;
                 height: 100%;
@@ -5127,7 +5127,7 @@ ul{
             content: '';
             position: absolute;
             color: #fff;
-            background: #e12454;
+            background: #0ABAB5;
             z-index: -1;
             transition: 0.5s width ease-in-out, 0.5s height ease-in-out;
             bottom: 0;
@@ -5140,9 +5140,9 @@ ul{
             display: block;
             i{
                 margin-top: 50px;
-                border: 1px solid,#e12454;
+                border: 1px solid,#0ABAB5;
                 border-radius: 40px;
-                background-color: #e12454;
+                background-color: #0ABAB5;
                 color: #fff;
                 width: 70px;
                 height: 70px;
@@ -5163,7 +5163,7 @@ ul{
             padding-bottom: 30px;
         }
         &:hover{
-            border-color: #e12454;
+            border-color: #0ABAB5;
             box-shadow: 0px 0px 10px #797979;
             &::before{
                 width: 100%;
@@ -5173,7 +5173,7 @@ ul{
                 color: #ffffff;
                 i{
                     background-color: #ffffff;
-                    color: #e12454;
+                    color: #0ABAB5;
                 }
             }
             h4{
@@ -5215,7 +5215,7 @@ ul{
                 content: '';
                 position: absolute;
                 color: #fff;
-                background: #e12454;
+                background: #0ABAB5;
                 z-index: -1;
                 transition: 0.5s width ease-in-out, 0.5s height ease-in-out;
                 top: 0;
@@ -5225,7 +5225,7 @@ ul{
             }
             i{
                 margin-top: 50px;
-                border: 1px solid,#e12454;
+                border: 1px solid,#0ABAB5;
                 border-radius: 40px;
                 background-color: #fff;
                 color: #797979;
@@ -5270,7 +5270,7 @@ ul{
             content: '';
             position: absolute;
             color: #fff;
-            background: #e12454;
+            background: #0ABAB5;
             z-index: -1;
             transition: 0.7s width ease-in-out, 0.7s height ease-in-out;
             top: 0;
@@ -5285,10 +5285,10 @@ ul{
             -moz-transition: all 0.7s;
             transition: all 0.7s;
             i{
-                background-color: #e12454;
+                background-color: #0ABAB5;
                 color: #fff;
                 margin-top: 50px;
-                border: 1px solid,#e12454;
+                border: 1px solid,#0ABAB5;
                 border-radius: 40px;
                 width: 70px;
                 height: 70px;
@@ -5321,7 +5321,7 @@ ul{
             padding-right: 20px;
         }
         &:hover{
-            background-color: #e12454;
+            background-color: #0ABAB5;
             &::before{
                 width: 100%;
                 height: 100%;
@@ -5329,7 +5329,7 @@ ul{
             span{
                 i{
                     background-color: #ffffff;
-                    color: #e12454;
+                    color: #0ABAB5;
                 }
             }
             p{
@@ -5378,9 +5378,9 @@ ul{
             padding-bottom: 20px;
             i{
                 margin-top: 50px;
-                border: 1px solid,#e12454;
+                border: 1px solid,#0ABAB5;
                 border-radius: 40px;
-                background-color: #e12454;
+                background-color: #0ABAB5;
                 color: #fff;
                 width: 70px;
                 height: 70px;
@@ -5413,9 +5413,9 @@ ul{
             padding-right: 20px;
         }
         &:hover{
-            border-bottom-color: #e12454;
+            border-bottom-color: #0ABAB5;
             &::before, &::after{
-                border-color: #e12454;
+                border-color: #0ABAB5;
                 transition: border-color 0s, width 0.25s, height 0.25s;
                 width: 100%;
                 height: 100%;
@@ -5423,12 +5423,12 @@ ul{
             }
             span{
                 &::after{
-                    background-color: #e12454;
+                    background-color: #0ABAB5;
                 }
             }
             h4{
                 a{
-                    color: #e12454;
+                    color: #0ABAB5;
                 }
             }
         }
