@@ -100,7 +100,7 @@
                                 <ul class="navbar-nav">
                                     <li>
                                         <a class="navbar-brand" href="/">
-                                            <img src="{{ asset('images/logo.png') }}" width="100" alt="img">
+                                            <img src="{{ asset('images/logonew.png') }}" width="150" alt="img">
                                         </a>
                                     </li>
                                     <li class="nav-item ps-rel">
@@ -115,7 +115,7 @@
                                     <li class="nav-item ps-rel">
                                         <a class="nav-link active" href="{{ route('blog.index') }}">Blog
                                         </a>
-
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -229,11 +229,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                        <p>© Copyright 2022 - 23 Design by {{ env('APP_NAME') }} | All Rights
-                            Reserved.</p>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                        <p class="last-para">Private Policy | Terms and Conditions.</p>
+                        <p>© Copyright 2025 | All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
