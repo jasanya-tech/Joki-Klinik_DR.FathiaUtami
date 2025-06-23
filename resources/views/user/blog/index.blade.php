@@ -12,13 +12,6 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="sb-contact-section">
-                        <nav aria-label="breadcrumb">
-                            <h4>Blog</h4>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Blog</li>
-                            </ol>
-                        </nav>
                     </div>
                 </div>
             </div>
