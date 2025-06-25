@@ -8,14 +8,6 @@
         <div class="container position-relative z-1 py-5">
             <div class="row">
                 <div class="col-12 text-center text-white">
-                    <h1 class="display-5 fw-bold mb-3">Dashboard Anda</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center bg-transparent mb-0">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}"
-                                    class="text-white text-decoration-none">Home</a></li>
-                            <li class="breadcrumb-item active text-danger" aria-current="page">Dashboard</li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
         </div>
