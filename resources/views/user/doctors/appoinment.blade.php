@@ -28,13 +28,6 @@
         <div class="container position-relative" style="z-index: 2;">
             <div class="row">
                 <div class="col-12">
-                    <div class="sb-contact-section text-white py-5">
-                        <h4>Book an Appointment</h4>
-                        <ol class="breadcrumb bg-transparent">
-                            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
-                            <li class="breadcrumb-item active text-white" aria-current="page">Book an Appointment</li>
-                        </ol>
-                    </div>
                 </div>
             </div>
         </div>
