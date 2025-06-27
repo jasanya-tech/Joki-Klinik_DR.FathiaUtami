@@ -20,6 +20,7 @@
     <title>Medical</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!--Template style -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/animate.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/animate.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.min.css') }}" />
@@ -35,6 +36,27 @@
     <!--favicon-->
     <link rel="shortcut icon" type="image/png" href="images/fav-icon.png" />
 </head>
+<style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        padding: 20px;
+        font-size: 32px;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        background-color: #128c7e;
+        color: white;
+        text-decoration: none;
+    }
+</style>
 
 <body>
     <div id="preloader">
@@ -42,8 +64,15 @@
             <img src="{{ asset('images/preloader.gif') }}" id="preloader_image" alt="loader">
         </div>
     </div>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/{{ App\Helpers\SettingHelper::getSetting('whatsapp') }}" 
+    class="whatsapp-float" 
+    target="_blank" 
+    title="Chat via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
     <!-- top to return -->
-    <a href="javascript:;" id="return-to-top"><i class="fas fa-angle-double-up"></i></a>
+    {{-- <a href="javascript:;" id="return-to-top"><i class="fas fa-angle-double-up"></i></a> --}}
     <!-- header start -->
     <div class="main-header-wrapper float_left">
         <div class="sb-main-header">
