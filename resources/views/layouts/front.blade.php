@@ -118,7 +118,7 @@
                             <nav class="navbar navbar-expand-lg">
                                 <ul class="navbar-nav">
                                     <li>
-                                        <a class="navbar-brand" href="/">
+                                        <a class="navbar-brand">
                                             <img src="{{ asset('images/logonew.png') }}" width="150" alt="img">
                                         </a>
                                     </li>
