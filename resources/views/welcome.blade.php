@@ -141,7 +141,7 @@
                               </span>
                               <p class="py-2"> {{$testimonial->massage}}
                               </p>
-                              <a href="javascript:;">- {{$testimonial->booking->user->name}}.</a>
+                                <a href="javascript:;">- {{$testimonial->booking->user->name ?? null }}.</a>
                            </div>
                         </div>
                         @endforeach
