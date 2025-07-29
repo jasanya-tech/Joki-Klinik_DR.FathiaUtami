@@ -130,7 +130,7 @@
                         <div class="item">
                            <img 
                               src="{{ $testimonial->booking->user->image_avatar_url ?? asset('images/12.png') }}" 
-                              alt="Portrait of {{ $testimonial->booking->user->name }}, testimonial provider{{ $testimonial->booking->user->image_avatar_url ? '' : ', default avatar shown' }}" 
+                              alt="Foto testimony" 
                               class="img-fluid rounded-circle border border-5 border-danger" 
                               style="width: 150px">
                            <div class="item-box">
